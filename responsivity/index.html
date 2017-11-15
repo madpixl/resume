@@ -1,0 +1,199 @@
+ 
+<html>
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/app.css" rel="stylesheet" />
+  <link href="css/jquery.fs.wallpaper.css" rel="stylesheet" /> 
+  <link href="css/font-awesome.css" rel="stylesheet" />
+  <link href="css/animate.css" rel="stylesheet" />
+  <link href="css/nanogallery.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+  integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+  crossorigin=""/>
+
+</head>
+<body>
+
+  <!-- <header id="video-wallpaper">  -->
+  <header id="top">
+    <nav class="navbar navbar-inverse navbar-fixed-top cbp-af-header">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#"><img src="images/logo-1.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+          <ul class="nav navbar-nav navbar-right">
+           <li><a href="#top">Home</a></li>
+           <li><a href="#welcome">Welcome to Westwoods</a></li>
+           <li><a href="#sites">Sites</a></li>
+           <li><a href="#activities">Activities</a></li> 
+           <li><a href="#adventures">Adventures</a></li>     
+           
+
+
+         </ul>
+       </div><!-- /.navbar-collapse -->
+     </div><!-- /.container-fluid -->
+   </nav>
+ </header>
+
+ <div class="container-fluid"> 
+     <!-- <section class="row">
+    <div class="fill-screen" style="background-image:url('images/stonycreek.jpg')">
+         </div> 
+        </section>
+   <section class="row content-filler"> 
+        </section>
+      -->
+      <section class="row title-row">
+        <div class="fill-screen fixed-attachment" style="background-image:url('images/westwoods_sunset.jpg')" data-stellar-background-ratio = "0.2">
+         <img class="title-image" src="images/westwoodsct.png" />  
+         <div class="down-button">
+          <a id="down-butt" class="btn" href="#welcome">
+            <i class="fa fa-arrow-circle-down fa-4x"></i>
+          </a> 
+        </div>   
+      </div>
+    </section>
+    <section id="welcome" class="row text-banner">  
+
+      <h1 class="col-md-12">WELCOME TO WESTWOODS!</h1>
+      <div class="col-md-8">
+        <p>The Westwoods Trail System in Guilford, Connecticut is a combination of state land, <a href="https://guilfordlandtrust.org/wordpress/properties/westwoods" target="_blank"> Guilford Land Trust</a> Acquisitions, and private property. It comprises over 1300 acres of land, with 20 miles of trails and connects to another immense swath of open space in Branford.
+        </p>
+        <p>
+          Westwoods is comprised of shoreline, tidal inlets, salt marshes, woodland, old quarries, rocky cliffs and caves, as well as the remnance of Native American habitation. It is a special place for all to explore. There are trailheads with a range of trails for hiking, biking, bouldering, geocaching, and a chance to reconnect with the woods and history. This site highlights some of those activities and attractions and can get your started on your journey to explore our treasure.
+        </p>
+      </div>
+      <div id="wwmap" class="col-md-4"></div>
+
+
+    </section>
+
+
+
+    <section class="row">
+      <div class="fill-screen" style="background-image:url('images/lost_lake.jpg')">
+      </div>
+    </section>
+    <section id="sites" class="row content-section"> 
+      <div class="col-md-12"> 
+          <h2>What's out there anyway? 
+        </h2>
+      </div>
+      <div class="col-md-3 activity-element "> 
+        <h3><a href="">Cliffs &amp; Caves</a></h3>
+      </div>
+
+      <div class="col-md-3 activity-element">
+
+        <h3><a href="">Colonial &amp; Prehistoric Stone</a></h3>
+      </div>
+      <div class="col-md-3 activity-element">
+        <h3><a href="">Plants &amp; Wildlife</a></h3>
+      </div>
+      <div class="col-md-3 activity-element">
+        <h3><a href="">Quarries, &amp; Water</a></h3>
+      </div>
+      
+
+    </section>
+
+    <section class="row">
+      <div id="nanoGallery3">
+        <a href="images/lostlakefrozen.jpg" data-ngthumb="images/lostlakefrozen.jpg" data-ngdesc="Lost Lake in Winter">Lost Lake</a>
+
+        <a href="images/waterfall2.jpg" data-ngthumb="images/waterfall2.jpg" data-ngdesc="Waterfall">Waterfall</a>
+
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="fill-screen fixed-attachment" style="background-image:url('images/westwoods_cliffs.jpg')">
+
+      </div>        
+    </section>
+
+    <section id="activities" class="row content-section"> 
+
+      <div class="col-md-4 activity-element wow fadeInLeft">
+        <img src="images/hiker.png" />
+        <h2>Hiking</h2>
+      </div>
+
+      <div class="col-md-4 activity-element wow fadeInDown">
+        <img src="images/bouldering.png" />
+        <h2>Bouldering</h2>
+      </div>
+
+      <div class="col-md-4 activity-element wow fadeInRight">
+        <img src="images/biker.png" />
+        <h2>Mountain Biking</h2>
+      </div> 
+    </section>
+
+
+    <section class="row">
+      <div class="fill-screen" style="background-image:url('images/stonycreek.jpg')">
+      </div>
+    </section>
+    <section id="adventures" class="row content-section"> 
+
+      <div class="col-md-4 activity-element">
+
+        <h2>Trailheads & Hikes</h2>
+      </div>
+
+      <div class="col-md-4 activity-element">
+
+        <h2>Bike routes</h2>
+      </div>
+
+      <div class="col-md-4 activity-element">
+
+        <h2>Maps</h2>
+      </div>
+
+    </section>
+
+
+
+  </div>
+
+  <footer class="container-fluid">
+    <small>Site created by madpixl. Contact me at:t ghoreyeb at gmail dot com.</small>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+  integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+  crossorigin=""></script>
+  <script src="js/jquery-1.9.0.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/cbpAnimatedHeader.js"></script>
+  <script src="js/jquery.fs.wallpaper.min.js"></script>
+  <script src="js/video_wallpaper.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.stellar.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/jquery.nanogallery.min.js"></script>
+  <script src='maps/markers.json'></script>
+  <script src='maps/leaf-map.js'></script>
+  <script src="js/scrolling.js"></script>
+
+</body>
+</html>
