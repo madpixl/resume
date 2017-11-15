@@ -1,0 +1,169 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	position:absolute;
+	right:1.8vw;
+	left:1.8vw;
+	font-size:1.25vw;
+	text-align:center;
+}
+
+.container { 
+	width:auto;
+	margin:1vh auto;
+	text-align:justify;
+	max-width:1200px;
+	padding-bottom:3em;
+
+}
+
+header {
+	text-align:center;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 4.5vw;
+	margin-top:.2em;
+	margin-bottom: .1em;
+	color:#000000;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 2.1vw;
+	margin-top:1.25em;
+	margin-bottom: 1em;
+	color:#336699;
+}
+
+address {
+	text-align:center;
+	width:100%;
+	display:inline-block;	
+	margin-bottom:.2em;
+	font-style:normal;
+	padding-right:0;
+
+}
+address span:first-child:before {
+	content:'';
+}
+address span:before {
+	content:'|';
+	margin-right: .25em;
+}
+
+.summary {
+	width:95%;
+	border-radius: 6px;
+	background-color:#3366aa;
+	color:#fefefe;
+	padding:.5em 1em;
+	font-size:1em;
+	margin:1em auto;
+
+}
+
+.duration {
+	display:inline-block;
+	width: 15vw;
+	float: right;
+	text-align:right;
+}
+
+
+dl  {
+	display:block;
+	margin-bottom:.8em;
+	padding:0;
+}
+
+dt {
+	font-weight: 700;
+	font-size:1.4vw;
+	margin-bottom:.5em;
+	margin-top:1em;
+	margin-left:0;	
+   text-align:left;
+}
+dd {
+	margin-left:0;
+	margin-bottom:.75em;
+} 
+ul li {
+	list-style:square;
+	color:#336699;
+	line-height:1.2em;
+}
+ul li span {
+	color:#333;
+}
+
+.skills .thirds {
+	width:100%;	
+	display:flex;
+	justify-content:center;
+}
+.skills .thirds > div { 
+	justify-content:space-around;
+	width:30%;
+	padding:.25% 1.5%;
+	margin:1%;
+	border:solid 1px #ccc;
+	box-shadow: 8px 8px 4px #aaa;
+}
+footer {
+	position:fixed;
+	bottom:0px;
+	left:0;
+	right:0;
+	padding-top:2px;
+	text-align:center;
+	line-height: 1.4em; 
+	border-top:solid 1px #333;
+	font-size:.9em;
+	background-color:#3366aa;
+	color:#fefefe;
+}
+footer, footer a:link, footer a:visited, footer a {
+	color:#fefefe;
+}
+
+
+@media print
+{ 
+
+	body {
+		font-size:10pt;
+	}
+	header h1 { 
+		font-size: 17pt;
+		margin:.5em auto;
+	}
+   address { 
+		margin:.5em auto;
+	}
+    h2, dt {
+    font-size:10pt;
+    }
+    .consulting {
+    page-break-after:always;
+    }
+    .skills .thirds > div {
+     font-size:9pt;
+     box-shadow:none;
+     }
+	.summary {  
+    font-size:9pt;
+        padding:1em;
+        margin:.5em auto;
+	}
+    footer, footer a, footer a:link, footer a:visited {
+		position:static;
+        bottom:1px;
+        display:inline-block;
+        color:#000000;
+        border:none;
+        background-color:transparent;
+	}
+}
