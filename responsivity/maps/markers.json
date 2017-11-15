@@ -1,0 +1,44 @@
+markers = [
+   {
+     "name": "Dunk Rock",
+     "url": "https://guilfordlandtrust.org/wordpress/wp-content/maps/WestwoodsPrintedMapFull.pdf",
+     "lat": 41.28551,
+     "lng": -72.7052
+   },
+   {
+     "name": "Sam Hill",
+     "url": "https://guilfordlandtrust.org/wordpress/wp-content/maps/WestwoodsPrintedMapFull.pdf",
+     "lat": 41.26954,
+     "lng": -72.69603
+   },
+   {
+     "name": "Moose Hill Blue Rect",
+     "url": "https://guilfordlandtrust.org/wordpress/wp-content/maps/WestwoodsPrintedMapFull.pdf",
+     "lat": 41.28462, 
+     "lng": -72.72315
+   },
+
+   {
+     "name": "Moose Hill Green Rect",
+     "url": "https://guilfordlandtrust.org/wordpress/wp-content/maps/WestwoodsPrintedMapFull.pdf",
+     "lat": 41.29238, 
+     "lng": -72.72409
+   },
+
+   {
+     "name": "Pedaller's Rd",
+     "url": "https://guilfordlandtrust.org/wordpress/wp-content/maps/WestwoodsPrintedMapFull.pdf",
+     "lat": 41.2954,
+     "lng":-72.71335
+
+   },
+
+ {
+     "name": "Leet's Island Rd",
+     "url": "https://guilfordlandtrust.org/wordpress/wp-content/maps/WestwoodsPrintedMapFull.pdf",
+     "lat": 41.26545,
+     "lng":-72.72985
+   },
+
+  
+];
