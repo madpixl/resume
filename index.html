@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT in CT  - Thomas Ghoreyeb</title>
+ <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,600" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/resume.css" rel="stylesheet">
+</head>
+<body>
+	
+    <header class="banner">
+ 
+   
+<h1>Thomas Ford Ghoreyeb
+</h1>
+<nav class="primary col-md-2 col-sm-1">
+    <a id="dragonflies" class="active-link">Welcome</a> 
+    <a href="http://itinct.com/responsivity/" target="blank">Responsive Site</a> 
+    <a href="http://itinct.com/resume-master/" target="_blank" id="resume-but">Resume</a>
+    <a href="" id="rotato">Rotation (JS) </a>
+</nav>
+
+</header>
+
+    
+	<div class="video-container">
+	<video poster="dragonfly.jpg" id="bgvid" playsinline autoplay muted>
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+<source src="dragonflies.m4v" type="video/m4v">
+<source src="dragonflies.mp4" type="video/mp4">
+</video>
+
+
+<div id="welcome">
+<p>Dragonflies in my backyard, enjoying the summer heat and feasting on small flying insects.</p>
+<button>Pause</button>
+</div></div> 
+ 
+<footer>
+ 
+   <address>
+  <span>Thomas F. Ghoreyeb - 41 Dodge Court Guilford, CT 06437</span> <span><a href="mailto:tghoreyeb@gmail.com">tghoreyeb@gmail.com</a></span> <span><a class="telephone" href="tel:203-605-8175">203-605-8175</a></span><span><a target="_blank" href="https://www.linkedin.com/in/thomas-ghoreyeb-6963581">LinkedIn</a></span>
+  </address>
+</footer>
+
+</div>
+<script type="text/javascript">
+$(function() {
+var vid = document.getElementById("bgvid");
+var pauseButton = $("#welcome button");
+
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+    $("#welcome button").text = "Paused";
+}
+
+function vidFade() {
+  vid.classList.add("stopfade");
+}
+
+vid.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+vid.pause();
+// to capture IE10
+vidFade();
+}); 
+
+pauseButton.click(function() {
+  vid.classList.toggle("stopfade");
+  if (vid.paused) {
+    vid.play();
+    $("#welcome button").text("Pause");
+ $("#welcome p").text("Dragonflies in my backyard, enjoying the summer heat and feasting on small flying insects.");
+  } 
+  else {
+    vid.pause();
+    $("#welcome button").text("Video Paused");
+      $("#welcome p").text("This is an example of HTML5 full screen video");
+  }    
+})
+ 
+ 
+});
+ 
+</script>
+	</body>
+	</html>
