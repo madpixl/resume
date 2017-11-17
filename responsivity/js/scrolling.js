@@ -1,9 +1,9 @@
 
 $(function() {
 
-//	$(window).on("load,resize", function() {
-//		$(".fill-screen").css("height", window.innerHeight);	
-//	});
+ 	$(window).on("load,resize", function() {
+ 		$(".fill-screen").css("height", window.innerHeight);	
+ 	});
 
 	$('body').scrollspy({
 	target: '.navbar',
@@ -24,11 +24,17 @@ $(window).stellar();
 //wow
 new WOW().init();
 
+
 $(document).ready(function() {
-	$('#nanoGallery3').nanoGallery();
+	 $('card div').each(function (i){
+	 var itm = "#nanoGallery"+(i+1);  
+    $(itm).nanoGallery(); 
+ });
 	});
 
+ 
 });
+
 
 
 
