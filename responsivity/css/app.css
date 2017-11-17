@@ -1,7 +1,11 @@
 ﻿html, body {
-    font-family:'Open Sans', sans-serif;
+    font-family:'Roboto', sans-serif;
     height:100%; 
     /* padding-top:78px; */
+}
+
+h1,h2,h3,h4 {
+    color:#336699;
 }
 .navbar {
     margin-bottom:0px;
@@ -15,9 +19,19 @@
     background-color:#336644;
 }
 
+
 footer {
     background-color:#336644;
     text-align:center;
+    color:#efefef;
+    line-height:2vh;
+    padding:1.5vh;
+    postion:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index:2;
+
 }
 .navbar-inverse .navbar-nav {
     margin:2vh auto;
@@ -27,7 +41,12 @@ footer {
     line-height:2vh;
 }
 .navbar img {
-    padding:2px 8px;
+    top:0px;
+     bottom:0;
+     margin:auto;
+    float:left;
+    width:90%;
+    height:auto;
 }
 .navbar-inverse .navbar-nav>li.active > a:link,
 .navbar-inverse .navbar-nav>li.active > a:visited,
@@ -88,6 +107,15 @@ i {
     background-color:#222;
     background-size:cover;
 }
+
+.activity-element card > div  {
+    height:165px;
+    overflow:hidden;
+}
+.activity-element card > div img {
+height:auto;
+width:auto;
+}
 .cbp-af-header-shrink {
 
     padding-top:2px;
@@ -124,7 +152,7 @@ aside {
 
     margin-bottom:40px;
     color:darkorange;
-    font-weight:bold;
+    font-weight:600;
 
 }
 .range-list img {
@@ -164,7 +192,6 @@ aside {
     height:70px;
 
 }
-
 .sports-list-top div {
 
     margin-left:auto;
@@ -172,7 +199,6 @@ aside {
     text-align:center;
 
 }
-
 .sports-list-top a {
 
     margin-left:30px;
@@ -180,40 +206,32 @@ aside {
     display:inline-block;
 
 }
-
 article {
 
     padding:40px;
     text-align:center;
 
 }
-
 section {
 
     min-height:350px;
     text-align:center;
 }
-
 .text-banner {
 
     text-align:center;
     margin:40px 20px;
 }
-
 .text-banner h1 {
-
-    font-size:44px;
+    font-weight:900;
+    font-size:4em;
     color:#336699;
-    text-align:left;
-
-
+    padding-bottom:.5em;
 }
-
 .text-banner p {
 
     font-size:18px;
 }
-
 #activities {
 
     padding-top:50px;
@@ -222,7 +240,6 @@ section {
 
     margin:50px;
 }
-
 .activity-element {
 
     text-align:center;
@@ -233,15 +250,16 @@ section {
     height:75px; 
 
 }
-
 .fixed-attachment {
 
     background-attachment:fixed;
+
 }
 .contact-us {
 
     margin:50px;
     text-align:center
+
 }
 
 @media(max-width:1024px) {
@@ -278,6 +296,8 @@ section p {
     border:solid 1px #0000ff; 
     width:480px; 
     height:300px;
+    text-align:center;
+     
 
 }
 
@@ -291,7 +311,7 @@ section p {
     .navbar img {
 
      position:absolute;
-     top:0;
+     top:0px;
      bottom:0;
      margin:auto;
      width:70%;
@@ -305,9 +325,10 @@ section p {
     }
 
     .range-list h4 {
-
+        color:#336699;
+         font-weight:700;
         display:inline;
-        font-size:18px;
+        font-size:1.75em;
     }
     .range-list img {
 
@@ -322,6 +343,16 @@ section p {
 }
 
 @media (min-width:768px) {
+
+    .navbar-inverse li a {
+        padding:15px 1vw;
+    }
+
+    .navbar img {
+     width:30vw;
+     position:absolute;
+     top:15px;
+}
 
     .container-sm-height {
 
@@ -352,7 +383,7 @@ section p {
     }
     .row-md-height {
 
-        display:able-row;
+        display:table-row;
 
     }
 }
