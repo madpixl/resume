@@ -84,7 +84,7 @@ i {
 .down-button {
 
     position:absolute;
-    bottom:40px;
+    bottom:20px;
     width:100%;
     text-align:center;
 }
@@ -262,15 +262,6 @@ section {
 
 }
 
-@media(max-width:1024px) {
-    
-    .fixed-attachment {
-
-        background-attachment:fixed;
-
-    }
-}
-
 .img-responsive {
 
     margin:0 auto;
@@ -295,27 +286,41 @@ section p {
 
     border:solid 1px #0000ff; 
     width:480px; 
-    height:300px;
+    height:320px;
     text-align:center;
-     
-
 }
 
 @media (max-width:400px) {
 
     .navbar header {
-
+        
         position:relative;
 
     } 
+    .fixed-attachment {
+
+    background-position:-50%;
+    }
     .navbar img {
 
      position:absolute;
      top:0px;
      bottom:0;
      margin:auto;
-     width:70%;
+     margin-top:18px;
+     width:80%;
 
+    }
+    .text-banner h1 {
+        font-size:1.8em;
+        font-weight:700;
+    }
+
+    #wwmap {
+ 
+    width:100%; 
+    height:100%;
+ 
     }
 }
 @media (max-width:767px) {
@@ -332,13 +337,33 @@ section p {
     }
     .range-list img {
 
-        width:33%;
-        height:33%;
+        width:50%;
+        height:50%;
         margin-top:20px ;
         margin-right:10px;
         margin-bottom:30px;
     }
 
+    .navbar img {
+         
+        width:50%;
+        clear:both;
+    }
+ 
+    h1 {
+        padding-left:4px;
+    }
+
+    .title-image {
+   
+    top:45vh;
+    left:50vw;
+    width:90vw;
+    height:auto;
+    margin-right:-50%;
+    transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+}
     
 }
 
@@ -349,9 +374,10 @@ section p {
     }
 
     .navbar img {
-     width:30vw;
+     width:40vw;
      position:absolute;
-     top:15px;
+     margin-top:0px;
+     margin-left:-25px;
 }
 
     .container-sm-height {
@@ -370,6 +396,11 @@ section p {
         float:none;
     }
 
+    
+
+ 
+     
+
 }
 
 @media (min-width:992px) {
@@ -386,4 +417,27 @@ section p {
         display:table-row;
 
     }
+    @media(max-width:1024px) {
+    
+    .title-image {
+    top:55vh;
+    left:50vw;
+    width:75vw;
+    height:auto;
+    margin-right:-80vw;
+    transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+}
+    .fixed-attachment {
+         background-attachment:fixed;
+         margin-right:-50%;
+    }
+
+ #wwmap {
+ 
+    width:500px; 
+    height:300px;
+     
+   
+}
 }
