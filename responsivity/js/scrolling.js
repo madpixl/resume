@@ -12,11 +12,15 @@ $(function() {
 
 //animated scrolling
 $('nav a, #down-butt').bind('click', function() {
+
 	$('html, body').stop().animate({
 		scrollTop: $($(this).attr('href')).offset().top -80
-	}, 1500, 'easeInOutExpo');
+	}, 1500, 'easeInOutExpo'); 
 	event.preventDefault();
+	$('.navbar-collapse').removeClass('in');
 });
+
+
 
 //parallax
 $(window).stellar();
