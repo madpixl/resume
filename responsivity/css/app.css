@@ -66,7 +66,15 @@ h1,h2,h3,h4 {
     -webkit-transform:translate(-50%, -50%);
 }
 
+.fill-screen {
+    background-image:url('images/westwoods_sunset.jpg');
+    background-size:100% 100%;
+    background-position:center;
+    height:100vh;
+     
 
+}
+ 
 footer {
     background-color:#336644;
     text-align:center;
@@ -99,7 +107,7 @@ i {
 
     color:#fff;
 }
-
+/*
 #video-wallpaper {
 
     display:block;
@@ -113,6 +121,7 @@ i {
     background-color:#222;
     background-size:cover;
 }
+*/
 
 .activity-element card > div  {
     height:165px;
@@ -127,19 +136,7 @@ width:auto;
     padding-bottom:2px;
     opacity:.9;
 }
-.fill-screen {
-    background-image:url('images/westwoods_sunset.jpg');
-    background-size:cover;
-    background-position:center;
-    height:100vh;
 
-}
-.footer {
-
-    color:#ffffff;
-    background-color:#aaaaaa;
-
-} 
 aside {
 
     background-color:#f7f7f7;
