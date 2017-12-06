@@ -112,6 +112,25 @@ ul li span {
 	border:solid 1px #ccc;
 	box-shadow: 8px 8px 4px #aaa;
 }
+
+.highlights ul {
+	list-style:none;
+	margin-left:0;
+	padding-left:0;
+}
+
+.highlights li {
+	list-style:none;
+	margin-left:0;
+	padding-left:0;
+	margin-bottom:1vh;
+	color:#000000;
+}
+ .highlights ul li strong {
+	color:#336699;
+}
+
+
 footer {
 	position:fixed;
 	bottom:0px;
