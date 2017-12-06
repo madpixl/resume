@@ -123,13 +123,10 @@ ul li span {
 	list-style:none;
 	margin-left:0;
 	padding-left:0;
-	margin-bottom:1vh;
+	margin-bottom:1.5vh;
 	color:#000000;
 }
- .highlights ul li strong {
-	color:#336699;
-}
-
+ 
 
 footer {
 	position:fixed;
