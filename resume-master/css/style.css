@@ -111,6 +111,7 @@ ul li span {
 	margin:1%;
 	border:solid 1px #ccc;
 	box-shadow: 8px 8px 4px #aaa;
+	text-align: left;
 }
 
 .highlights ul {
