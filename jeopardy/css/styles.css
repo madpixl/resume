@@ -1,0 +1,266 @@
+
+@font-face
+{
+   font-family: 'jeopardy';
+   src: url('../font/gyparody-webfont.woff2') format('woff2'), url('font/gyparody-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+body
+{  
+   background: url(../img/Jeopardy-1.jpeg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+   font-size: 100%;
+   font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+   margin: 0%;
+   padding: 0%;
+   overflow: hidden;
+   text-align: center;
+}
+.screen
+{
+   display: block;
+   position: absolute;
+   margin: 1% 8%;
+   text-align: center;
+   top: 2px;
+   right: 2px;
+   left: 2px;
+   bottom: 10px;
+}
+.game-board
+{
+   background-color: #010101;
+   margin: auto; 
+   height: 84%;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column; 
+   align-items: center;
+   
+}
+.banner
+{
+   font-size: 2em;
+   position: relative;
+}
+.banner h1
+{
+   font-family: jeopardy;
+   font-size: 3.5em;
+   padding: 0;
+   margin: 0;
+   background: #f3e2c7; /* Old browsers */
+   background: -moz-linear-gradient(top, #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3', GradientType=0 ); /* IE6-9 */
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+/*
+.banner h1::after
+{
+   position: absolute;
+   align-items: center;
+   justify-content: center; 
+   z-index: -1;
+   color: #333333;
+   text-shadow: 2px 2px #003366;
+   content: "Jeopardy";
+}
+
+*/
+.block
+{
+   border: solid 3px #111111;
+   width: 16.2%;
+   height: 15%; 
+   display: block;
+   position: relative;
+   overflow: hidden;
+   background-color: navy;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 2px;
+   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+}
+.block.title:hover
+{
+   border-color: #111111;
+}
+.block:hover
+{
+   border-color: #ffff00;
+}
+.block.title p
+{
+   color: #fefefe;
+   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black";
+   font-size: 1.4rem;
+   padding: 0;
+   margin: auto;
+   overflow: hidden;
+   vertical-align: middle;
+}
+.block.wrong
+{
+    font-family:Arial;
+    color: #550000;
+   font-size: 3rem;
+   text-align: center;
+   font-weight:bold;
+}
+
+.block.right
+{
+    font-family:Arial;
+    color: #446644;
+   font-size: 3rem;
+   text-align: center;
+   font-weight:bold;
+}
+.block.right:hover, .block.wrong:hover
+{
+    border-color:#000000;
+}
+.block.wrong:hover {
+ #ff0000;  
+}
+
+.block.answers
+{
+   font-size: 1rem;
+   text-align: center;
+}
+.block.question
+{
+   font-size: 1rem;
+   text-align: center;
+   color: #efefef;
+}
+ 
+.block.content
+{
+   left: 4px;
+   right: 4px;
+   top: 4px;
+   bottom: 2px;
+   overflow: hidden;
+   position: absolute;
+   font-size: .9rem;
+}
+.block.points > a,
+.block.points > a:active,
+.block.points > a:link,
+.block.points > a:-webkit-any-link
+{
+   font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+   font-size: 3em;
+   color: gold;
+   font-weight:bold;
+    text-shadow:#0F0E0E 2px 2px;
+    text-decoration:none;
+}
+
+.modal:before {
+  content: "";
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.modal:target:before {
+  display: block;
+}
+.modal:target .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 20%;
+ 
+}
+.modal-dialog {
+   font-family: Tahoma;
+  background:#0044aa;
+  color:#ffffff;
+  border: #333 solid 1px;
+  border-radius: 5px;
+  margin-left: -200px;
+  position: fixed;
+  left: 33%;
+  top: -100%;
+  z-index: 11;
+  width: 800px;
+  -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+.modal.block {
+ background-color:transparent; 
+}
+.modal.block:hover {
+ border:none; 
+}
+
+.modal-dialog .btn-close {
+ color:#ffffff;
+ text-decoration:none;
+ font-weight:bold;
+ float:right;
+ padding:0;
+ margin:0; 
+ cursor:pointer;
+}
+
+.modal-dialog h2 {
+ width:96%;
+ float:left;
+  margin-left: 10px;
+  margin-top: -5px;
+  padding-top:5px;
+ tex-align:center;
+}
+
+.modal-body {
+  padding: 10px;
+  font-weight:bold;
+  clear:both;
+  float:left;
+}
+.choices {
+text-align:left;
+}
+
+.choices li{
+ padding-left:5px;  
+}
+.modal-header,
+.modal-footer {
+  padding: 10px 5px;
+}
+ 
+.modal-header {
+   height:50px;
+   display:block;
+  border-bottom: #eee solid 1px;
+  font-size: .8em;
+}
+ odal-footer {
+  border-top: #eee solid 1px;
+  text-align: right;
+}
+

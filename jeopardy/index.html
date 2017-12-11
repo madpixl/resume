@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Madpixl Jeopardy</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+ 
+<body>
+<audio autoplay id="audio-1">
+ <source src="wav/Jeopardy-theme-song.mp3" type="audio/mpeg"></source>
+ </audio>
+ 
+
+ 
+<!-- Modal -->
+<div class="modal" id="modal-one" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2> This is the question?  200pts.</h2>
+      <a href="#" class="btn-close" aria-hidden="true">×</a>
+    </div>
+    <div class="modal-body">
+      <ol class="choices">
+      <li>
+      Choice 1</li>
+      <li>
+      Choice 2</li>
+      <li>
+      Choice 3</li>
+      </ol>
+    </div>
+     
+  </div>
+</div>
+<!-- /Modal -->
+ 
+ 
+<div class="screen">
+  <div class="banner">
+    <h1>Jeopardy</h1>
+  </div>
+  <div class="game-board">
+      <div class="block title">
+      <p>Hello Newman</p>
+    </div>
+    <div class="block points">
+      <a>200</a>
+    </div>
+    <div class="block points">
+      <a>400</a>
+    </div>
+    <div class="block points">
+      <a>600</a>
+    </div>
+    <div class="block points">
+      <a>800</a>
+    </div>
+    <div class="block points">
+      <a>1000</a>
+    </div>
+    <div class="block title">
+      <p>People and Places</p>
+    </div>
+    <div class="block points">
+      <a>200</a>
+    </div>
+    <div class="block points">
+      <a>400</a>
+    </div>
+    <div class="block points">
+      <a>600</a>
+    </div>
+    <div class="block points">
+      <a>800</a>
+    </div>
+    <div class="block points">
+      <a>1000</a>
+    </div>
+    
+    <div class="block title">
+      <p>Products and States</p>
+    </div>
+     <div class="block points">
+      <a>200</a>
+    </div>
+    <div class="block points">
+      <a>400</a>
+    </div>
+    <div class="block right">
+      <a>600</a>
+    </div>
+    <div class="block points">
+      <a href="#modal-one" class="btn btn-big">800</a>
+    </div>
+    <div class="block points">
+      <a>1000</a>
+    </div>
+    <div class="block title">
+      <p>Dealertrack HR</p>
+    </div>
+     <div class="block points">
+      <a>200</a>
+    </div>
+    <div class="block points">
+      <a>400</a>
+    </div>
+    <div class="block points">
+      <a>600</a>
+    </div>
+    <div class="block points">
+      <a>800</a>
+    </div>
+    <div class="block points">
+      <a>1000</a>
+    </div>
+    <div class="block title">
+      <p>eReg Knowledge</p>
+    </div>
+     <div class="block points">
+      <a>200</a>
+    </div>
+    <div class="block points">
+      <a>400</a>
+    </div>
+    <div class="block points">
+      <a>600</a>
+    </div>
+    <div class="block points">
+      <a>800</a>
+    </div>
+    <div class="block points">
+      <a>1000</a>
+    </div>
+    <div class="block title">
+      <p>Web Knowledge</p>
+    </div>
+    <div class="block wrong">
+      <a>What is the iphone X screen resolution?</a>
+    </div>
+    <div class="block question">
+      <a>In CSS, do you respond to multiple resolutions?</a>
+    </div>
+    <div class="block question">
+      <a>What character represents Linux?</a>
+    </div>
+    <div class="block question">
+      <a>What browser is the most recent to be discontinued?</a>
+    </div>
+    <div class="block question">
+      <a>Which can a browser read CSS SCSS SASS LESS?</a>
+    </div> 
+  </div>
+</div>
+<script>
+function stop() {
+    var audio = document.getElementById('audio-1');     
+        audio.pause();
+        audio.currentTime = 0;
+    }
+window.onclick = stop;
+</script>
+ 
+</body>
+</html>

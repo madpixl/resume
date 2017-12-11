@@ -1,0 +1,271 @@
+{
+	"board": [
+		{
+			"category": "Presidential Places"
+			[	
+				{		 
+				"questions":[
+					{
+					"question" : "Jefferson's home",
+					"answer":"answer",	
+					"choices": [
+					"Banyan",
+					"Mustafa",
+					"Putty"
+					]
+			 	},
+			 	{
+					"question" : "GWB' birth place",
+					"answer":"b",	
+					"Woodland, TX": [
+					"New Haven, CT",
+					"Springfield, MA"
+					]
+			 	},
+			 	{
+					"question" : "Obama's birth place",
+					"answer":"answer",	
+					"choices": [
+					"Kenya",
+					"Hawaii",
+					"Illinois"
+					]
+			 	},
+			 	{
+					"question" : "His father made deals to keep him out of the draft",
+					"answer":"c",	
+					"choices": [
+					"Clinton",
+					"Obama",
+					"Trump"
+					]
+			 	},
+			 	{
+					"question" : "Known for his jar of Jelly Beans",
+					"answer":"b",	
+					"choices": [
+					"Carter",
+					"Reagan",
+					"Johnson"
+					]
+			 	}
+			 
+			]
+		},
+		{
+			"category": "States"
+			[	
+				{		 
+				"questions":[
+					{
+					"q1" : "State with most wild fires.",
+					"a1":"California",	
+					"choices1": [
+					"California",
+					"Arkansas",
+					"Texas"
+					]
+			 	},
+			 	{
+					"q2" : "State with strongest winds.",
+					"a2":"New Hampshire",	
+					"choices2": [
+					"Florida", 
+					"Oklahoma",
+					"New Hampshire"
+					]
+			 	},
+			 	{
+					"q3" : "State with most rain.",
+					"a3":"Washington",	
+					"choices3": [
+					"Washington",
+					"Oklahoma",
+					"Florida"
+					]
+			 	},
+			 	{
+					"q4" : "Earthquakes triggered by fracking here",
+					"a4":"Oklahoma",	
+					"choices4": [
+					"Virginia",
+					"New York",
+					"Hawaii"
+					]
+			 	},
+			 	{
+					"q5" : "Most Active Volcanoes",
+					"a5":"Hawaii",	
+					"choices5": [
+					"Oklahoma",
+					"Virginia",
+					"Oregon"
+					]
+			 	}
+			 
+			]
+		},
+		{
+			"category": "Hello Newman"
+			[	
+				{		 
+				"questions":[
+					{
+					"question" : "Jerry's Mechanic and Elane's Boyfriend",
+					"answer":"answer",	
+					"choices": [
+					"Banyan",
+					"Mustafa",
+					"Putty"
+					]
+			 	},
+			 	{
+					"question" : "Jerry's Mechanic and Elane's Boyfriend",
+					"answer":"answer",	
+					"choices": [
+					"Banyan",
+					"Mustafa",
+					"Putty"
+					]
+			 	},
+			 	{
+					"question" : "Jerry's Mechanic and Elane's Boyfriend",
+					"answer":"answer",	
+					"choices": [
+					"Banyan",
+					"Mustafa",
+					"Putty"
+					]
+			 	},
+			 	{
+					"question" : "Town where Jefferson built Monticello",
+					"answer":"answer",	
+					"choices": [
+					"Richmond",
+					"Raliegh",
+					"Charlottesville"
+					]
+			 	},
+			 	{
+					"question" : "Jerry's Mechanic and Elane's Boyfriend",
+					"answer":"answer",	
+					"choices": [
+					"Banyan",
+					"Mustafa",
+					"Putty"
+					]
+			 	}
+			 
+			]
+		},
+		{
+			"category": "Mountain Bikes"
+			[	
+				{		 
+				"questions":[
+					{
+					"q1" : "The two choices for drivetrains",
+					"a1":"SRAM & Shimano",	
+					"choices1": [
+					"Fox and Campignolo",
+					"Enve and Chromag",
+					"SRAM & Shimano"
+					]
+			 	},
+			 	{
+					"q2" : "Brand by people who left Fox",
+					"a2":"X-Fusion",	
+					"choices2": [
+					"Magura",
+					"RST",
+					"X-Fusion"
+					]
+			 	},
+			 	{
+					"q3" : "Currently the biggest commercial tire spec",
+					"a3":"29 plus",	
+					"choices3": [
+					"29",
+					"650b",
+					"29+"
+					]
+			 	},
+			 	{
+					"q4" : "The bigggest bike concern for XC racing",
+					"a4":"low weight",	
+					"choices4": [
+					"long travel",
+					"low weight",
+					"bright color"
+					]
+			 	},
+			 	{
+					"q5" : "Famous Scottish mountain biker",
+					"a5":"Danny",	
+					"choices5": [
+					"Johnny",
+					"Billy",
+					"Danny"
+					]
+			 	}
+			 
+			]
+		},
+		{
+			"category": "Web Tech"
+			[	
+				{		 
+				"questions":[
+					{
+					"question" : "CSS give priority to...",
+					"answer":"specicivity",	
+					"choices": [
+					"specicivity",
+					"last class listed",
+					"ids"
+					]
+			 	},
+			 	{
+					"question" : "HTML is...",
+					"answer":"the language of the web",	
+					"choices": [
+					"strongly typed.",
+					"not opinionated",
+					"the language of the web"
+					]
+			 	},
+			 	{
+					"question" : "TypeScript is...",
+					"answer":"a superset of JavaScript",	
+					"choices": [
+					"Angular specific",
+					"a superset of JavaScript",
+					"a JavaScript replacement"
+					]
+			 	},
+			 	{
+					"question" : "is the most popular framework",
+					"answer":"Bootstrap",	
+					"choices": [
+					"Bootstrap",
+					"Klingon",
+					"SASS"
+					]
+			 	},
+			 	{
+					"question" : "Points an IP address to a local domain name",
+					"answer":"Host file",	
+					"choices": [
+					"Host file",
+					"Forward file",
+					"cgi-bin"
+					]
+			 	}
+			 
+			]
+		}
+			]
+		}
+	
+
+
