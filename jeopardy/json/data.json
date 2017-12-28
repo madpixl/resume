@@ -1,0 +1,284 @@
+		{
+			"categories": [{
+					"category": "Presidential Places",
+					"questions": [{
+							"question": "Jefferson's home",
+							"answer": "answer",
+							"choices": [
+								"Monticello",
+								"Port Jefferson",
+								"Camp David"
+							]
+						},
+						{
+							"question": "GWB' birth place",
+							 
+							"choices": [
+								"Woodland, TX", 
+								"New Haven, CT",
+								"Springfield, MA"
+							]
+						},
+						{
+							"question": "Obama's birth place",
+							 
+							"choices": [
+								"Kenya",
+								"Hawaii",
+								"Illinois"
+							]
+						},
+						{
+							"question": "His father made deals to keep him out of the draft",
+							 
+							"choices": [
+								"Clinton",
+								"Obama",
+								"Trump"
+							]
+						},
+						{
+							"question": "Known for his jar of Jelly Beans",
+							 
+							"choices": [
+								"Carter",
+								"Reagan",
+								"Johnson"
+							]
+						}
+					]
+				},
+				{
+					"category": "States",
+					"questions": [{
+							"question": "State with most wild fires.",
+							 
+							"choices": [
+								"California",
+								"Arkansas",
+								"Texas"
+							]
+						},
+						{
+							"question": "State with strongest winds.",
+							 
+							"choices": [
+								"Florida",
+								"Oklahoma",
+								"New Hampshire"
+							]
+						},
+						{
+							"question": "State with most rain.",
+							 
+							"choices": [
+								"Washington",
+								"Oklahoma",
+								"Florida"
+							]
+						},
+						{
+							"question": "Earthquakes triggered by fracking here",
+							 
+							"choices": [
+								"Virginia",
+								"New York",
+								"Hawaii"
+							]
+						},
+						{
+							"q5": "Most Active Volcanoes",
+							 
+							"choices": [
+								"Oklahoma",
+								"Virginia",
+								"Oregon"
+							]
+						}
+					]
+				},
+				{
+					"category": "Hello Newman",
+					"questions": [{
+							"question": "Jerry's Mechanic and Elane's Boyfriend", 
+							"choices": [
+								"Banyan",
+								"Mustafa",
+								"Putty"
+							]
+						},
+						{
+							"question": "Jerry's Mechanic and Elane's Boyfriend", 
+							"choices": [
+								"Banyan",
+								"Mustafa",
+								"Putty"
+							]
+						},
+						{
+							"question": "Jerry's Mechanic and Elane's Boyfriend", 
+							"choices": [
+								"Banyan",
+								"Mustafa",
+								"Putty"
+							]
+						},
+						{
+							"question": "Town where Jefferson built Monticello", 
+							"choices": [
+								"Richmond",
+								"Raliegh",
+								"Charlottesville"
+							]
+						},
+						{
+							"question": "Jerry's Mechanic and Elane's Boyfriend", 
+							"choices": [
+								"Banyan",
+								"Mustafa",
+								"Putty"
+							]
+						}
+					]
+				},
+				{
+					"category": "Usabilly",
+					"questions": [{
+							"question": "Designs Web Pages from style guide",
+							"choices": [
+								"Web Developer",
+								"Web Designer",
+								"UI Designer",
+								"UX Designer"
+							]
+						},
+						{
+							"question": "What is Pantone Process Coated for...",
+							"choices": [
+								"Print Design",
+								"Responsive Web Design",
+								"Hex Color Value"
+							]
+						},
+						{
+							"question": "PNG abbreviation",
+							"choices": [
+								"Portable Network Graphic",
+								"Preloaded Node Generation",
+								"Poor Network Generation"
+							]
+						},
+						{
+							"question": "JSON format", 
+							"choices": [
+								"javascript object notation",
+								"junior opinionated node",
+								"java slow object network"
+							]
+						},
+						{
+							"question": "SASS is not", 
+							"choices": [
+								"a replacement for css",
+								"a mac compatible technology",
+								"user freindly"
+							]
+						}
+					]
+				},
+				{
+					"category": "Mountain Bikes",
+					"questions": [{
+							"question": "The two choices for drivetrains",
+							"choices": [
+								"Fox and Campignolo",
+								"Enve and Chromag",
+								"SRAM & Shimano"
+							]
+						},
+						{
+							"question": "Brand by people who left Fox",
+							"choices": [
+								"Magura",
+								"RST",
+								"X-Fusion"
+							]
+						},
+						{
+							"question": "Currently the biggest commercial tire spec", 
+							"choices": [
+								"29",
+								"650b",
+								"29+"
+							]
+						},
+						{
+							"question": "The bigggest bike concern for XC racing" ,
+							 "choices": [
+								"long travel",
+								"low weight",
+								"bright color"
+							]
+						},
+						{
+							"question": "Famous Scottish mountain biker", 
+							"choices": [
+								"Johnny",
+								"Billy",
+								"Danny"
+							]
+						}
+					]
+				},
+				{
+					"category": "Web Tech",
+					"questions": [{
+							"question": "CSS give priority to...",
+							
+							"choices": [
+								"specicivity",
+								"last class listed",
+								"ids"
+							]
+						},
+						{
+							"question": "HTML",
+							
+							"choices": [
+								"strongly typed.",
+								"not opinionated",
+								"the language of the web"
+							]
+						},
+						{
+							"question": "TypeScript is...",
+							
+							"choices": [
+								"Angular specific",
+								"a superset of JavaScript",
+								"a JavaScript replacement"
+							]
+						},
+						{
+							"question": "is the most popular framework",
+							
+							"choices": [
+								"Bootstrap",
+								"Klingon",
+								"SASS"
+							]
+						},
+						{
+							"question": "Points an IP address to a local domain name",
+							"answer": "Host file",
+							"choices": [
+								"Host file",
+								"Forward file",
+								"cgi-bin"
+							]
+						}
+					]
+				}
+			]
+		}
+		
