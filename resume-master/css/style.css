@@ -1,3 +1,7 @@
+html {
+  font-size: 12pt;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	position:absolute;
@@ -12,7 +16,7 @@ body {
 	margin:1vh auto;
 	text-align:justify;
 	max-width:1200px;
-	padding-bottom:3em;
+	padding-bottom:1em;
 
 }
 
@@ -150,37 +154,44 @@ footer, footer a:link, footer a:visited, footer a {
 @media print
 { 
 
-	body {
-		font-size:10pt;
+	html body {
+		font-size: 14pt;
 	}
 	header h1 { 
 		font-size: 17pt;
 		margin:.5em auto;
+      text-align: center;
 	}
    address { 
 		margin:.5em auto;
 	}
     h2, dt {
-    font-size:10pt;
+    font-size:14pt;
     }
-    .consulting {
-    page-break-after:always;
+  
+  
+    #certification {
+    page-break-before:always;
+      clear:both;
+      page-break-inside: avoid;
     }
     .skills .thirds > div {
-     font-size:9pt;
+     font-size:12pt;
      box-shadow:none;
      }
 	.summary {  
-    font-size:9pt;
+    font-size:10pt;
         padding:1em;
         margin:.5em auto;
 	}
     footer, footer a, footer a:link, footer a:visited {
-		position:static;
-        bottom:1px;
-        display:inline-block;
-        color:#000000;
-        border:none;
-        background-color:transparent;
+		position:absolute;
+        bottom:25px;
+        display:inline-block; 
+      width:100%;
+      margin:0;
+      line-height:1.1em;
+      padding: 3px;
+      margin-bottom:0;
 	}
 }
