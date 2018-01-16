@@ -24,6 +24,7 @@ $("#generate").click( function() {
   $(".alert").text("");
   $("#periods").empty(); 
   $("#reset").show();
+  $("#footer").show();
   $("#rotation-title").show();
  //hide the info panel
   if ($("#overview-ctrl").text()=== "-") {
@@ -64,6 +65,7 @@ $("#generate").click( function() {
      var jason = "json/teams.json";
      //hide the reset until somebody does something
      $("#reset").hide(); 
+      $("footer").hide(); 
      $("#rotation-title").hide(); 
      /* dynamic
      var navyblue = "<li> Aslanian, J </li><li> Beckwith, H</li><li> Costanza, M</li><li> Glover, E </li><li> Gunderson, S </li><li> Harris, C. </li><li> R, Benjamin <li>Romero, C </li>"; 

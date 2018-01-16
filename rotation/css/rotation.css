@@ -1,4 +1,12 @@
 @charset "UTF-8";
+ 
+@media screen {
+
+
+  html body { 
+     background-size: 98vw;
+     padding-left:2vw;
+  }
 
 
   .rotator .players ul
@@ -14,16 +22,6 @@
    float: left;
    min-width: 130px;
  }
-
-}
-@media screen {
-
-  html body { 
-     background-size: 98vw;
-     padding-left:2vw;
-  }
-
-
 
   .droptrue .ui-sortable-helper
   {
@@ -49,6 +47,21 @@
    margin: .5em .15em;
    color:blue;
    border:1px transparent solid;
+ }
+footer {
+ position:fixed;
+ bottom:0;
+ margin-bottom:0;
+ height:10vh; 
+ width:100vw;
+ text-align:center;
+ z-index:100;
+}
+ .butt-period {
+  float:none;
+  margin:auto;
+  background-color:#eeeeee;
+  color:#333333;
  }
 
  button:hover {
@@ -82,6 +95,8 @@
  outline:none;
 
 }
+
+
 
 .rotator
 { 
@@ -213,7 +228,7 @@
  /* players  drag and list */
  .players ul
  {
-   background-color: #eeeeee;
+   background-color: #ffffff;
    list-style: none;
  }
  .players ul li:hover
@@ -279,9 +294,9 @@
  }
 }
 
-/* ----------- iPhone 6 and 6S ----------- */
+/* ----------- iPhone 6 + later ----------- */
 /* Portrait and Landscape */
-@media only screen  and (min-device-width: 337px)  and (max-device-width: 667px)  and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen  and (min-device-width: 337px)  and (max-device-width: 667px)   {
 
 html {
   font-size:0.80em;
@@ -293,33 +308,92 @@ html {
   font-size:3vw;
 }
 #team-buttons {
-  position:relative;
- margin:0;
- margin-left:8px;
-width:100%;
-padding:0;
+width:100vw;
+margin-left:-3vw;
+display:flex;
+justify-content:space-between;
+flex-wrap: nowrap;
 }
 
 #team-buttons button {
-padding:4px;
-margin:1px;
-  }
+width:auto; 
+margin:1px 2px;
+padding:1px 2px; 
+font-size:3.5vw; 
+background-color:#efefef;
+text-transform:uppercase;
+}
 
-div, div div {
+.panel, .panel-body{
+  height:92vh;
+  width:98vw;
   margin:0;
-  width:100%;
-  padding:0;
+  border:none;
+}
+#rotation .panel {
+  margin-left:-1vw;
+  width:97vw;
+} 
 
+#rotation  {
+  width:100vw;
+  margin:0;
+  padding:0;
+}
+
+ #rotation .panel-body li {
+ font-size:8vw;
+ padding:2vh 4vw;
+ }
+
+div, div>div {
+  margin:.5vw;
+  width:99vw;
+  padding:0;
+  border:none;
+
+}
+div .panel-header{
+  width:auto;
+  margin:0;
 }
 .container-fluid {
-  padding:2px;
+  padding:0;
+  border:none;
+}
 
+{
+  width:90vw;
+}
+
+
+.players ul {
+  padding-left:2px;
+  list-style:none;
+  margin-left:-2vw;
+}
+ul .ui-sortable li,
+.players ul li {
+  list-style:none;
+  padding:4px;
+  border:solid 1px #333;
+  margin: 4px 2px;
+  background-color:#eeeeee;
 }
 .banner h1 {
+  padding:0;
+  margin-left:auto;
   font-size:1.2em;
 }
 .rotator {
   box-shadow:none;
+}
+.btn-group { 
+  float:right;
+  text-align:right;
+}
+button {
+  border:solid 1px #0000ff;
 }
 
 } 
@@ -348,7 +422,7 @@ div, div div {
    width:auto;
    clear:both;
    float: left;   
-   margin-left: 5px;
+   margin-left: 1px;
    font-size: 11pt;
    text-align:left;
    display:block;
@@ -415,8 +489,11 @@ div, div div {
   margin-right:3px;
   font-size:.7em;
 }
+
+
+
 .sortable2 {
-  width:94%;
+  width:auto;
 }
 .sortable2 li {
   width:auto;
@@ -432,13 +509,11 @@ div, div div {
 { 
  margin-left:3px;
  border-bottom: solid 1px #eeeeee;
- font-size: 12pt;
+ font-size: 3vw;
  width:auto;
  text-align:left;
 }
 h4, .instructions, section {
   display:none;
 }
-
-
 }
