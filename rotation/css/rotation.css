@@ -8,7 +8,7 @@
      padding-left:2vw;
   }
 
-  .max-width {
+  .container-fluid .row.max-width {
     max-width:1000px;
   }
  
