@@ -7,6 +7,10 @@
      background-size: 98vw;
      padding-left:2vw;
   }
+
+  .container-fluid {
+    max-width:1000px;
+  }
  
   .rotator .players ul
   {
@@ -290,7 +294,7 @@ footer {
     display: none;
     visibility: hidden;
   }
- 
+
 }
 
 /* ----------- iPhone 6 + later ----------- */
