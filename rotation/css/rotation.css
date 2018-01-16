@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/* ----------- iPhone 6 and 6S ----------- */
-/* Portrait and Landscape */
-@media only screen  and (min-device-width: 337px)  and (max-device-width: 667px)  and (-webkit-min-device-pixel-ratio: 2) {
-
 
 
   .rotator .players ul
@@ -23,9 +19,8 @@
 @media screen {
 
   html body { 
-    background-image: url(../img/dock.jpg);
-    background-size: 100%;
-
+     background-size: 98vw;
+     padding-left:2vw;
   }
 
   .droptrue .ui-sortable-helper
@@ -282,12 +277,11 @@
  }
 }
 
+/* ----------- iPhone 6 and 6S ----------- */
+/* Portrait and Landscape */
+@media only screen  and (min-device-width: 337px)  and (max-device-width: 667px)  and (-webkit-min-device-pixel-ratio: 2) {
 
-
-
-
-@media (min-width: 321px) and (max-width: 600px) {
- html {
+html {
   font-size:0.80em;
 }
 .container-fluid {
@@ -326,8 +320,7 @@ div, div div {
   box-shadow:none;
 }
 
-
-}
+} 
 
 /*Print styles */
 
