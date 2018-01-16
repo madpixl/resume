@@ -1,0 +1,105 @@
+{
+	"teams": [{
+			"name": "navy",
+			"roster": [
+				"Aslanian, J",
+				"Beckwith, H",
+				"Costanza, M",
+				"Glover, E",
+				"Gunderson, S",
+				"Harris, C.",
+				"R. Benjamin",
+				"Romero, C "
+			]
+		},
+		{
+			"name": "gold",
+			"roster": ["Ciocca, A",
+				"Gabriel, G",
+				"Iaspara, M",
+				"Lemon, E",
+				"Medvecky, A",
+				"Mulligan, W",
+				"St Denis, D",
+				"Ulrich, C",
+				"Silverman, J",
+				"Iantosca, L"
+			]
+		},
+		{
+			"name": "green",
+			"roster": ["H, Sam",
+				"M, Ronan",
+				"M, Joseph",
+				"O, Niall",
+				"S, Cole",
+				"S, Evan",
+				"S, Jack",
+				"Z, Harrison",
+				"C, Jamie"
+			]
+		},
+		{
+			"name": "orange",
+			"roster": ["B, Harper",
+				"B, Aidan",
+				"C, Mark",
+				"H, Zachary",
+				"L, Collin",
+				"P, Joey",
+				"S, Ryan",
+				"T, Cooper "
+			]
+		},
+		{
+			"name": "silver",
+			"roster": ["D, Sal",
+				"D, Christopher",
+				"H, Sammy",
+				"J, Brady",
+				"M, Logan",
+				"M, Michael",
+				"R, Henry",
+				"S, Aj "
+			]
+		},
+		{
+			"name": "black",
+			"roster": ["A, Tristan",
+				"C, Evan",
+				"C, Jake",
+				"C, Mason",
+				"H, Bobby",
+				"M, Jake",
+				"P, Jack",
+				"T, Ryan "
+			]
+
+		},
+		{
+			"name": "blue",
+			"roster": ["Celotto, N",
+				"Hinding, T",
+				"Ghoreyeb, E",
+				"Derda, I",
+				"Putnam, K",
+				"Malatesta, M",
+				"DeAngelo, E",
+				"Updyke, T"
+			]
+
+		},
+		{
+			"name": "purple",
+			"roster": ["A, Adam",
+				"C, Joey",
+				"G, Shane",
+				"I, Anthony",
+				"S, Rayaan",
+				"T, Jackson",
+				"T, Niko",
+				"W, Dylan "
+			]
+		}
+	]
+}

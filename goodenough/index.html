@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Tweetspa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="css/bootstrap-custom.css" rel="stylesheet" type="text/css" />
+ 
+</head>
+
+<body class="seagull">
+ <div class="container container-fluid">
+  <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+  <div class="navbar-header">
+      
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+   <div class="navbar-header">
+   <div class="navbar-brand logo">TweetSpa.com</div>
+</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Join</a></li>
+        <li><a href="#">Blog</a></li>
+         <li><a href="#">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#"></a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+    <!-- /.navbar-inner --> 
+  </nav>
+  <!-- /.navbar --> 
+  
+  <!-- /.container --> 
+</div>
+</div>
+<section class="container-fluid">
+<div id="title">
+	<div id="titlecontent">
+    	 <p>Imagine a world where your remote starter will call your car to the curbside.</p>
+         <p>There are no login screens, you are known to any device or computer with which you choose to interact.</p>
+         <p> Your chosen applications follow you.</p>
+         <p>Productivity is measured by the complexity of problems you solve, and simplicity of your solution...</p>
+         <p>...not by the hours you appear to be at your workstation.</p>
+         <p>User experience is more than just a screen and an input. It lies in emotion, tangibles, and response.</p>
+         <p>It is a conversation.</p> 
+         <p>It might occur as an asssistant completing tasks and verifying accuracy...</p>
+         <p>...definitely not a form that demands a mouse and a keyboard to conform what an ancient data container expects...</p>
+         <p>Leave behind your monotonous task list and requirements to react.</p>
+         <p>Produce.</p>
+         <p>Explore possibilities.</p>
+         <p>Celebrate innovation.</p> 
+         <p>Live off the dividends of your productivity.</p>
+         <h2>Join Us.</h2>  
+	</div>
+</div>
+
+</section>
+<div id="mineclick" onclick="playsnd()">&nbsp;</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> 
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+<script>
+var snd = new Audio("snd/ocean.mp3");  
+snd.play();
+function playsnd() {
+	 
+var snd2 = new Audio("snd/mine.mp3"); 	
+snd2.play();
+}
+
+</script>
+
+ 
+</body>
+</html>

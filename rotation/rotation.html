@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT in CT  - Thomas Ghoreyeb</title>
+
+<!-- jquery is used to make life easier --> 
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<!-- not much json for demo, might as well suck it in all at once... -->
+    <script type="text/json">
+     var jason = "json/teams.json";
+    </script>
+<!--// Fonts \\--> 
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,600" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+<!--BS Used primarily for Scaffolding -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+<!-- Some tweaks for better display and printing across phones etc. -->  
+<link href="../css/style.css" rel="stylesheet">
+<link href="css/rotation.css" rel="stylesheet">
+
+</head>
+<body> 
+    <header class="banner">
+     
+<h1>Thomas Ford Ghoreyeb - Samples</h1>
+  
+</header>
+<div id="team-rotator" class="rotator">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-sm-12">
+        <h3 class="text-center">Basketball Roster Rotation Generator</h3> 
+          <section id="overview" class="panel col-md-10 col-md-offset-1">
+             <div class="row panel-heading"><span class="pull-right"><button id="overview-ctrl" class="show-hide">-</button> </span>
+             </div>
+             <div class="overview-body">
+              <strong>Primary User:</strong> Rec league coaches. Short-notice planning. Must be able to print a standardized copy that clearly shows roster and rotation.<p> <strong>Use Case:</strong>
+              Rec leagues provide equitable playing time for all players regardless of skill. Games are divided into 8 periods and  Rotation sheets are requried by referees at the start of each game. Refs may accept updated rotations via phone screen, if a player is no-show or gets hurt, requiring last minute adjustments. <p> I automated the process of generation, which also lets you model your player mix for each period, ensuring balanced lines.  It has been re-purposed to work within this page, so it may have lost some of its multi-screen flexibility, but most of the functionality is still intact.
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <p>Technologies Used</p>
+                </div>
+                <div class="col-md-12">
+                  <span class="col-xs-2 col-xs-offset-1 text-center">
+                    <img src="img/badges/html5.png" width="58" height="auto" alt="HTML 5">
+                  </span>
+
+                  <span class="col-xs-2 text-center">
+                    <img src="img/badges/css3.png" width="58" height="auto" alt="CSS 3">
+                  </span>
+
+                  <span class="col-xs-2 text-center">
+                   <img src="img/badges/jqueryui.png" width="58" height="auto" alt="JQuery / JQuery UI">
+                 </span>
+
+                 <span class="col-xs-2 text-center">
+                  <a href="json/teams.json" target="_blank" title="View JSON in a new tab"><img src="img/badges/json.png" width="58" height="auto" alt="JSON">
+                   JSON</a></span>
+
+                   <span class="col-xs-2 text-center">
+                    <img src="img/badges/bootstrap.png" width="58" height="auto" alt="JSON">
+                  </span>
+                </div> 
+              </div>
+            </div>
+        </section> 
+      </div>
+      <div class="col-xs-12 text-center">
+        <h4>Select a team.</h4>
+      <div id="team-buttons" class="col-md-12 text-center form-horizontal">
+      <!-- this will be dynamically populated -->
+          <button class=" butt-team">navy</button>
+          <button class=" butt-team">gold</button>
+          <button class=" butt-team">green</button>
+          <button class=" butt-team">orange</button>
+          <button class=" butt-team">silver</button>
+          <button class=" butt-team">black</button>
+          <button class=" butt-team">blue</button>
+          <button class=" butt-team">purple</button>
+         </div>   
+        </div>
+      </div>
+      <div class="row lineups players">
+      <div class="col-md-12">
+          <h4>Team <span id="team-color"></span></h4>
+        <div class="col-md-6">
+          <h4>Roster</h4>
+        <span id="step-2" class="instructions">
+         Drag or click players to add them to the Lineup panel.</span>
+          <ul id="sortable1" class="droptrue source">
+          </ul>
+        </div>
+        
+        <div class="col-md-6 lineups">
+          <h4>Game Lineup</h4> <span id="step-3" class="instructions"> You can drag to reorder players. Click <strong>GO</strong> to see the rotation order for the entire game.  Click<strong>Reset</strong> to make changes.<br> When you're done, just print the page for a ref-readable rotation sheet.</span>
+          <ul id="sortable2" class="droptrue target">
+          </ul>
+        
+          <div class="btn-group row pull-right">
+            <button type="button" id="generate">GO</button>
+            <button type="button" id="reset">Reset</button>
+            <span class="alert"></span>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div id="rotation" class="row">
+        <div id="rotation-title" class="col-xs-12">
+        <h3>Rotation</h3>
+      </div>
+
+      <div id="periods" class="periods">
+      </div>
+      
+    </div>
+  </div>
+</div>
+   </div>
+ <script src="js/rotation.js"></script>
+</div>
+ 
+ 
+	</body>
+	</html>

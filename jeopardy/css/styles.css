@@ -303,3 +303,98 @@ text-align:left;
   text-align: right;
 }
 
+
+@media (min-width: 321px) and (max-width: 480px) {
+   html {
+      font-size:0.80em;
+   }
+.screen
+{
+   display: block;
+   position: absolute;
+   margin: 0vh 0vw;
+   text-align: center;
+   top: 0px;
+   right: 0px;
+   left: 0px;
+   bottom: 0px;
+}
+
+.banner
+{
+   font-size: 2em;
+   position: relative;
+}
+.banner h1
+{
+   font-family: jeopardy;
+   font-size: 3.5em;
+   padding: 0;
+   margin: 0;
+   background: #f3e2c7; /* Old browsers */
+   background: -moz-linear-gradient(top, #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3', GradientType=0 ); /* IE6-9 */
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+ 
+
+
+.col {
+  
+  padding:0
+  outline:0;
+  margin:0; 
+}
+.block
+{
+   border: solid 2px #111111;
+   height: 13vh; 
+   width: 15vw;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 3px;
+   font-family:  "Franklin Gothic Bold", "Arial Black", sans-serif;
+}
+
+.block.points ,
+.block.points > a,
+.block.points > a:active,
+.block.points > a:link,
+.block.points > a:-webkit-any-link
+{
+   font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+   font-size: 5.5vw;
+   color: gold;
+   font-weight:bold;
+    text-shadow:#0F0E0E 2px 2px;
+    text-decoration:none;
+}
+
+ 
+.block.title p
+{
+   font-family: "Impact", "Haettenschweiler";
+   font-size:4vw;
+    margin-bottom:1.8vh;
+    padding-bottom:10%;
+  text-overflow:initial;
+ word-wrap: break-word;
+}
+
+.modal-dialog {
+  
+  left: 50%;
+  margin-left:-40%;
+  top:10%;
+   z-index:11;
+   width:80vw;
+  height:auto;
+  font-size:.6rem;
+}
+ 
+}
+
