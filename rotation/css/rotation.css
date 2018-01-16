@@ -7,13 +7,7 @@
      background-size: 98vw;
      padding-left:2vw;
   }
-
-  footer {
-    position:relative;
-    display:none;
-    visibility: hidden;
-  }
-  }
+ 
   .rotator .players ul
   {
    list-style: none;
@@ -289,6 +283,14 @@
    font-size: .75em;
    color: #aaaaaa;
  }
+
+
+footer {
+    position: relative;
+    display: none;
+    visibility: hidden;
+  }
+ 
 }
 
 /* ----------- iPhone 6 + later ----------- */
