@@ -24,7 +24,7 @@ $("#generate").click( function() {
   $(".alert").text("");
   $("#periods").empty(); 
   $("#reset").show();
-  $("#footer").show();
+  $("footer").show();
   $("#rotation-title").show();
  //hide the info panel
   if ($("#overview-ctrl").text()=== "-") {
