@@ -8,7 +8,12 @@
      padding-left:2vw;
   }
 
-
+  footer {
+    position:relative;
+    display:none;
+    visibility: hidden;
+  }
+  }
   .rotator .players ul
   {
    list-style: none;
@@ -48,15 +53,7 @@
    color:blue;
    border:1px transparent solid;
  }
-footer {
- position:fixed;
- bottom:0;
- margin-bottom:0;
- height:10vh; 
- width:100vw;
- text-align:center;
- z-index:100;
-}
+
  .butt-period {
   float:none;
   margin:auto;
@@ -300,6 +297,18 @@ footer {
 
 html {
   font-size:0.80em;
+}
+
+footer {
+ position:fixed;
+ bottom:0;
+ margin-bottom:0;
+ height:10vh; 
+ width:100vw;
+ text-align:center;
+ z-index:100;
+visibility: visible;
+display:block;
 }
 .container-fluid {
   margin-top:3vh;
