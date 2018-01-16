@@ -94,7 +94,7 @@
  border:solid 1px #dedede ;
  opacity: .9;
  background-color: #fff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 }
@@ -280,6 +280,53 @@
    font-size: .75em;
    color: #aaaaaa;
  }
+}
+
+
+
+
+
+@media (min-width: 321px) and (max-width: 600px) {
+ html {
+  font-size:0.80em;
+}
+.container-fluid {
+  margin-top:3vh;
+}
+.instructions {
+  font-size:3vw;
+}
+#team-buttons {
+  position:relative;
+ margin:0;
+ margin-left:8px;
+width:100%;
+padding:0;
+}
+
+#team-buttons button {
+padding:4px;
+margin:1px;
+  }
+
+div, div div {
+  margin:0;
+  width:100%;
+  padding:0;
+
+}
+.container-fluid {
+  padding:2px;
+
+}
+.banner h1 {
+  font-size:1.2em;
+}
+.rotator {
+  box-shadow:none;
+}
+
+
 }
 
 /*Print styles */
