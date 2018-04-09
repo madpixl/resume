@@ -1,17 +1,10 @@
 @charset "UTF-8";
- 
-@media screen {
+/* ----------- iPhone 6 and 6S ----------- */
+/* Portrait and Landscape */
+@media only screen  and (min-device-width: 337px)  and (max-device-width: 667px)  and (-webkit-min-device-pixel-ratio: 2) {
 
 
-  html body { 
-     background-size: 90vw;
-     padding-left:2vw;
-  }
 
-  .container-fluid .row.max-width {
-    max-width:1000px;
-  }
- 
   .rotator .players ul
   {
    list-style: none;
@@ -25,6 +18,15 @@
    float: left;
    min-width: 130px;
  }
+
+}
+@media screen {
+
+  html body { 
+    background-image: url(../img/dock.jpg);
+    background-size: 100%;
+
+  }
 
   .droptrue .ui-sortable-helper
   {
@@ -50,13 +52,6 @@
    margin: .5em .15em;
    color:blue;
    border:1px transparent solid;
- }
-
- .butt-period {
-  float:none;
-  margin:auto;
-  background-color:#eeeeee;
-  color:#333333;
  }
 
  button:hover {
@@ -91,8 +86,6 @@
 
 }
 
-
-
 .rotator
 { 
  margin:auto;
@@ -101,7 +94,7 @@
  border:solid 1px #dedede ;
  opacity: .9;
  background-color: #fff;
- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 }
@@ -129,7 +122,7 @@
  text-align: left;
  background-color: #ffffff;
  clear: both;
- width: 98%;
+ width: 100%;
  padding: 5px;
  border: solid 1px #eeeeee;
  opacity:.95;
@@ -163,7 +156,7 @@
       padding-top:2vh;
     }
     .instructions {
-      font-size:.85em;
+      font-size:.4vw;
       color:#666666;
       font-family: Roboto;
       font-weight: 400;
@@ -223,7 +216,7 @@
  /* players  drag and list */
  .players ul
  {
-   background-color: #ffffff;
+   background-color: #eeeeee;
    list-style: none;
  }
  .players ul li:hover
@@ -287,132 +280,7 @@
    font-size: .75em;
    color: #aaaaaa;
  }
-
-
-footer {
-    position: relative;
-    display: none;
-    visibility: hidden;
-  }
-
 }
-
-/* ----------- iPhone 6 + later ----------- */
-/* Portrait and Landscape */
-@media only screen  and (min-device-width: 337px)  and (max-device-width: 667px)   {
-
-html {
-font-size:0.80em;
-}
-
-footer {
- position:fixed;
- bottom:0;
- margin-bottom:-10px;
- padding-bottom:0;
- height:10vh; 
- width:100vw;
- text-align:center;
- z-index:100;
-visibility: visible;
-display:block;
-}
-.container-fluid {
-  margin-top:3vh;
-}
-.instructions {
-  font-size:3vw;
-}
-#team-buttons {
-width:100vw;
-margin-left:-3vw;
-display:flex;
-justify-content:space-between;
-flex-wrap: nowrap;
-}
-
-#team-buttons button {
-width:auto; 
-margin:1px 2px;
-padding:1px 2px; 
-font-size:3.5vw; 
-background-color:#efefef;
-text-transform:uppercase;
-}
-
-.panel, .panel-body{
-  height:90vh;
-  width:97vw;
-  margin:0;
-  border:none;
-}
-#rotation .panel {
-  margin-left:-1vw;
-  width:97vw;
-} 
-
-#rotation  {
-  width:100vw;
-  margin:0;
-  padding:0;
-}
-
- #rotation .panel-body li {
- font-size:8vw;
- padding:2vh 4vw;
- }
-
-div, div>div {
-  margin:.5vw;
-  width:99vw;
-  padding:0;
-  border:none;
-
-}
-div .panel-header{
-  width:auto;
-  margin:0;
-}
-.container-fluid {
-  padding:0;
-  border:none;
-}
-
-{
-  width:90vw;
-}
-
-
-.players ul {
-  padding-left:2px;
-  list-style:none;
-  margin-left:-2vw;
-}
-ul .ui-sortable li,
-.players ul li {
-  list-style:none;
-  padding:4px;
-  border:solid 1px #333;
-  margin: 4px 2px;
-  background-color:#eeeeee;
-}
-.banner h1 {
-  padding:0;
-  margin-left:auto;
-  font-size:1.2em;
-}
-.rotator {
-  box-shadow:none;
-}
-.btn-group { 
-  float:right;
-  text-align:right;
-}
-button {
-  border:solid 1px #0000ff;
-}
-
-} 
 
 /*Print styles */
 
@@ -438,7 +306,7 @@ button {
    width:auto;
    clear:both;
    float: left;   
-   margin-left: 1px;
+   margin-left: 5px;
    font-size: 11pt;
    text-align:left;
    display:block;
@@ -505,11 +373,8 @@ button {
   margin-right:3px;
   font-size:.7em;
 }
-
-
-
 .sortable2 {
-  width:auto;
+  width:94%;
 }
 .sortable2 li {
   width:auto;
@@ -525,11 +390,13 @@ button {
 { 
  margin-left:3px;
  border-bottom: solid 1px #eeeeee;
- font-size: 3vw;
+ font-size: 12pt;
  width:auto;
  text-align:left;
 }
 h4, .instructions, section {
   display:none;
 }
+
+
 }
