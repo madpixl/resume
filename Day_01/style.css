@@ -40,7 +40,9 @@ p {
   align-items: center;
   justify-content: center;
   margin-top:-9rem;
-  width:94vw;
+  margin-left:1vw;
+  margin-right:1vw;
+  width:98vw;
 }
 
 .key {
