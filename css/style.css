@@ -61,16 +61,16 @@ nav {
 nav.primary {
   font-family: 'Oswald', sans-serif;
   font-weight:300;
-  font-size:.95rem;  
+  font-size:2vw;  
   overflow:hidden;
+  min-width:375px;
      
 }
 nav.primary a {
   display: inline-block;
   text-align:center;
   color: #fff;
-  width:12vw;
-  float:left;
+  width:10vw;
   text-decoration: none;
   background:rgba(0,0,0,0.7);
   border:1px solid rgb(0,0,0);
@@ -95,6 +95,19 @@ nav.primary a:hover{
   background:rgba(0,0,0,0.9);
   color:#99ff99;
   cursor:pointer;
+}
+
+#welcome small nav a {
+  text-indent:1vw;
+ font-size:1vw;
+  padding: 1vw;
+  margin-left:1vw; 
+color:gold;
+  float:left;
+  width:98%;
+  display:block;
+  clear:right;
+
 }
 
 address {
@@ -246,6 +259,7 @@ float:left;
 }
 @media screen and (max-device-width: 800px) {
   html { background: url(dragonfly.jpg) #000 no-repeat center center fixed; }
+  #
  /* #bgvid { display: none; }*/
 }
 
@@ -260,8 +274,14 @@ float:left;
     text-align:center;
    }
     #welcome {
-    display:none;
+     width:32vw;
+    float:right;
+    top:5vh;
+    font-size:3vw;
    }
+   #welcome nav a:link {
+    font-size:3vw;
+  }
    .primary {
     position:relative;
     left:50%;
@@ -272,10 +292,10 @@ float:left;
 
    }
    .primary a:link, .primary a:hover, .primary a:visited, .primary a:active, a.active-link {
-    margin-left:5px;
+    margin-left:1vw;
     float:left;
-    font-size:1.1em;
-    width:10vw;
+    font-size:3.25vw;
+    width:9vw;
    }
 }
 
