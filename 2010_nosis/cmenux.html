@@ -1,0 +1,2354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>NTDPS Vision</title>
+<link type="text/css" href="js/css/portlet-theme/jquery-ui-1.8.custom.css" rel="stylesheet" />
+<!--   <link type="text/css" href="js/themes/portlet-theme/jquery-ui-1.8.custom.css" rel="stylesheet" /> -->
+<link type="text/css" href="superfish-1.4.8/css/superfish.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.custom.js"></script>
+<script type="text/javascript" src="superfish-1.4.8/js/superfish.js"></script>
+<script type="text/javascript">
+
+
+		// initialise plugins
+		jQuery(function(){
+			jQuery('ul.sf-menu').superfish();
+		});
+ </script>
+<script type="text/javascript">
+ 
+ 
+
+	$(function() {
+		$(".column").sortable({
+			connectWith: '.column'
+		});
+ $(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
+ $(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
+		 		 .find("#link-header")
+				.prepend('<span class="ui-icon ui-icon-pencil"></span>')
+		 .end()
+		 
+		 .find(".movable")
+		  .addClass("ui-widget-header ui-corner-all")
+			   .prepend('<span class="ui-icon ui-icon-extlink"></span><span class="ui-icon ui-icon-minusthick"></span>')
+		 .end()
+
+		  .find(".fixed")
+		  .addClass("ui-widget-header ui-corner-all")
+			   .prepend('<span class="ui-icon ui-icon-extlink"></span>')
+		 .end()
+		  
+			   
+			.find(".portlet-content");
+    	$(".portlet-header .ui-icon-minusthick").click(function() {
+			$(this).toggleClass("ui-icon-minusthick").toggleClass("ui-icon-plusthick");
+			$(this).parents(".portlet:first").find(".portlet-content").toggle();
+		});
+		$("#link-header .ui-icon-pencil").click(function() {
+																		  
+		 $("#links-dialog").dialog('open');
+		 });
+		$("#qualifications .ui-icon-extlink").click(function() {
+																		
+		 $("#quals-dialog").dialog('option','width', $('#container-content').width() );
+		 $("#quals-dialog").dialog('option','height',hi );
+		 $("#quals-dialog").dialog('open');
+		 });
+		$("#messaging .ui-icon-extlink").click(function() {
+		 $("#msg-dialog").dialog('open');
+		  
+		 });
+		 
+		$("#smail .ui-icon-extlink").click(function() {
+		 $("#smail-dialog").dialog('open');
+		  });
+		$(".top-bar #customize-link").click(function() {
+		 $("#portlet-dialog").dialog('open');
+		 });
+	
+	 $("#quals-dialog").dialog(
+      {
+			
+         autoOpen: false,
+        width: 900,
+			  modal: true,
+       height:500,
+			  
+         bgiframe: true         
+  }
+  
+   );
+	 $("#msg-dialog").dialog(
+      {
+			
+         autoOpen: false,
+        width: 900,
+         modal: true,
+         height: 500,
+         bgiframe: true         
+  }
+  
+   );	 
+	 
+ $("#smail-dialog").dialog(
+      {
+		  autoOpen: false,
+         width: 900,
+         modal: true,
+         height:500,
+         bgiframe: true              
+      }
+   );
+ 
+ $("#links-dialog").dialog(
+      {
+		   autoOpen: false,
+          width: 900,
+         modal: true,
+         height:500,
+         bgiframe: true             
+      }
+   );
+  $("#portlet-dialog").dialog(
+      {
+		   autoOpen: false,
+           width: 900,
+          modal: true,
+         height:500,
+         bgiframe: true             
+      }
+   );
+		$(".column").disableSelection();
+	});
+ </script>
+<script language="javascript">
+function screenHeight() {
+ 
+ size = document.documentElement.clientHeight;
+ size1 = (size*.50)+10;
+ size2 = size *.25;
+ document.getElementById('right-1').height = size1; 
+colPortlets =  document.getElementsByClassname('portlet');
+for (count=0; count<colPortlets.length; count++) {
+colPortlets[count].height = size2;	
+}
+}
+</script>
+<style type="text/css">
+<!--
+
+.column
+{
+ width: 170px;
+ float: left;
+ padding-bottom: 100px;
+}
+
+.portlet
+{
+ margin-top: 2em;
+ margin-right: 1em;
+ margin-bottom: 1em;
+ margin-left: 0;
+}
+
+.ui-icon
+{
+ float: right;
+}
+
+.portlet-content
+{
+ padding: 0.4em;
+ overflow:auto;
+}
+
+.ui-sortable-placeholder
+{
+ border: 1px dotted black;
+ visibility: visible !important;
+ height: 50px !important;
+}
+
+body, td, th
+{
+ font-family: Verdana, Geneva, sans-serif;
+ color: #333;
+ font-size: 10px;
+}
+
+.third-height
+{
+}
+
+body
+{
+ margin-left: 0px;
+ margin-top: 0px;
+ margin-right: 0px;
+ margin-bottom: 0px;
+}
+
+.top-bar
+{
+ PADDING-BOTTOM: 2px;
+ LINE-HEIGHT: 40px;
+ BACKGROUND-COLOR: #039;
+ PADDING-LEFT: 0px;
+ PADDING-RIGHT: 5px;
+ font-family: Arial, Helvetica, sans-serif;
+ COLOR: #eee;
+ FONT-SIZE: 21px;
+ FONT-WEIGHT: 800;
+ PADDING-TOP: 0px;
+ float:left;
+ position:relative;
+ width:100%;
+ background-image: url(images/bannerbg2.jpg);
+ height: 48px;
+}
+
+.top-bar .right
+{
+ BORDER-BOTTOM: #fff 1px;
+ BORDER-LEFT: #fff 1px;
+ MARGIN-right: 5px;
+ DISPLAY: block;
+ FONT-FAMILY: Verdana, Geneva, sans-serif;
+ CLEAR: none;
+ FONT-SIZE: 12px;
+ BORDER-TOP: #fff 1px;
+ BORDER-RIGHT: #fff 1px;
+ WIDTH:320px;
+ FLOAT: right;
+ text-align:right;
+ padding: 2px;
+}
+
+.top-bar .right div
+{
+ float:right;
+ TEXT-ALIGN: center;
+ LINE-HEIGHT: normal;
+ MARGIN-Left:10px;
+ FONT-FAMILY: Arial, Helvetica, sans-serif;
+ COLOR: #fff;
+ FONT-SIZE: 10px;
+ OVERFLOW: hidden;
+ height:50px;
+ cursor:hand;
+}
+
+.top-bar .right div div
+{
+ border:none;
+ float:left;
+ padding-left:5px;
+ padding-right:5px;
+}
+
+.section
+{
+ font-family:Arial, Helvetica, sans-serif;
+}
+
+#container-content
+{
+ padding: 0px;
+ width: 99%;
+ margin: 0px;
+}
+
+#col-left
+{
+ float: left;
+ width: 29%;
+ padding: 0px;
+ margin-left:1%;
+ height: auto;
+}
+
+#col-right
+{
+ float: left;
+ width: 67%;
+ margin-left: 1%;
+ border-top-style: none;
+ border-right-style: none;
+ border-bottom-style: none;
+ border-left-style: none;
+ overflow:hidden;
+}
+
+a.active-link
+{
+ font-weight: bold;
+ color: #FFF;
+ text-decoration: none;
+}
+
+.half-width
+{
+ float: left;
+ width: 49%;
+ clear: none;
+}
+
+.portlet
+{
+ padding: 0px;
+ width: 99%;
+ clear: both;
+ margin-top:10px;
+ margin-right: 0px;
+ margin-bottom: 0px;
+ margin-left: 0px;
+ height: 28%;
+ display: block;
+ background-color:#f0f0f0;
+}
+
+.portlet h3
+{
+ font-family: Verdana, Geneva, sans-serif;
+ color: #eee;
+ font-weight: bold;
+ font-size: 10px;
+ overflow: hidden;
+ white-space: nowrap;
+ height: 22px;
+ clear: both;
+ padding: 0px;
+ margin:0;
+ display:block;
+ line-height:18px;
+ padding: 2px;
+}
+
+.portlet h3 .ui-icon
+{
+ float: right;
+ margin:0;
+ padding:0;
+
+}
+
+.portlet h3 a
+{
+ font-size: 9px;
+ font-family: Verdana, Geneva, sans-serif;
+ color: #eee;
+ 
+}
+
+.portlet h3 a:hover
+{
+ font-size: 9px;
+ font-family: Verdana, Geneva, sans-serif;
+ color: #2222ff;
+}
+
+.half-height
+{
+ background-color: #A7C7ED;
+}
+
+#breadcrumbs
+{
+ width:100%;
+ height:16px;
+ z-index:1;
+ font-family: Verdana, Geneva, sans-serif;
+ font-size: 10px;
+ color: #C4D9FF;
+ line-height: 15px;
+ background-color: #006;
+ padding-left: 4px;
+}
+
+.link-title
+{
+ width: 240px;
+ line-height: 16px;
+ float: left;
+ clear: none;
+ overflow: hidden;
+}
+
+.break-link
+{
+ float: left;
+ width: 16px;
+ clear: none;
+ display: block;
+ height: 16px;
+ overflow: hidden;
+}
+
+#breadcrumbs a
+{
+ color: #C4D9FF;
+}
+
+#breadcrumbs a:hover
+{
+ color: #FC3;
+}
+
+.link-list
+{
+ display:block;
+ padding:3px;
+ list-style-position:inside;
+ margin:0;
+ overflow:auto;
+}
+
+.link-list li
+{
+ list-style:none;
+}
+
+.portlet-content
+{
+ font-family:Arial, Helvetica, sans-serif;
+ padding: 0.2em;
+ overflow:auto;
+}
+
+*html body .ui-dialog .ui-dialog-titlebar 
+{
+ font-family: Verdana, Geneva, sans-serif;
+ font-size: 1.2em;
+ line-height: 1.4em;
+ color: #fff;
+ background-attachment: fixed;
+ background-image: url(images/smallbg.jpg);
+ background-repeat: repeat-x;
+ text-align: left;
+ vertical-align: middle;
+ height: 28px;
+ padding: 5px;
+}
+
+.portlet-content #portlet-mail
+{
+ overflow: auto;
+}
+
+#pmail
+{
+ height: 280px;
+ overflow: auto;
+}
+
+.portlet-content #portlet-mail td a
+{
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 9px;
+}
+
+.portlet-content #portlet-mail td
+{
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 9px;
+}
+
+#table-pod
+{
+}
+
+#table-pod td, #table-pod th
+{
+ border-bottom: 1px solid #CCC !important;
+ border-right:1px solid #eee !important;
+ padding-left:2px;
+}
+
+#news .portlet-content li a, #news .portlet-content li a:link
+{
+ color: #00C;
+}
+
+.header-icons
+{
+ display: block;
+ padding: 0px;
+ float: right;
+}
+
+.paddedTable
+{
+ margin:  0;
+ padding: 0;
+}
+
+.paddedTable td
+{
+ overflow:hidden;
+ vertical-align: top;
+}
+
+#contentTable td
+{
+ font-family:Arial, Helvetica, sans-serif;
+ font-size:9px;
+ border: 1px solid #444;
+ overflow:hidden;
+}
+
+#contentTable
+{
+ border-collapse: collapse;
+}
+
+.headerRow td
+{
+ background-color: #d7e8fa;
+}
+
+.blockRow td
+{
+ background-color: #c9eefb;
+}
+
+#container-news li
+{
+ list-style-type:none;
+}
+
+#container-news .portlet-content a
+{
+ font-size: 9px;
+ color: #00A;
+ text-decoration: none;
+}
+
+#container-news .portlet-content a:hover
+{
+ font-size: 9px;
+ color:#00f;
+ text-decoration:underline;
+ text-decoration: none;
+}
+
+#container-links .portlet-content a
+{
+ font-size: 9px;
+ color: #00A;
+ text-decoration: none;
+ clear:both;
+ display:block;
+}
+
+#container-links .portlet-content a:hover
+{
+ color:#00F;
+ text-decoration:underline;
+ text-decoration: none;
+}
+
+#portlet-pod
+{
+ height:360px;
+ border:solid 1px #000;
+}
+
+.fixed
+{
+ background-image: url(images/smallbg-fixed.jpg);
+ background-repeat: repeat-x;
+}
+
+.fixed span, .movable span
+{
+ cursor: hand;
+}
+
+.movable
+{
+ background-image: url(images/smallbg.jpg);
+ background-repeat: repeat-x;
+}
+
+#header-left
+{
+ float: left;
+ padding-top: 10px;
+}
+</style>
+<link href="superfish-1.4.8/css/superfish.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+function swapbg(objct) {
+tds = objct.getElementsByTagName('TD');
+ ths = objct.getElementsByTagName('TH'); 
+for(var i=0; i<tds.length; i++){
+	 tds[0].style.backgroundColor = "#ffffaa";
+	 ths[0].style.backgroundColor = "#ffffaa";
+	 
+	} 
+}
+function swapbgBack(objct) {
+tds = objct.getElementsByTagName('TD');
+ ths = objct.getElementsByTagName('TH'); 
+for(var i=0; i<tds.length; i++){
+	 tds[0].style.backgroundColor = "";
+	 ths[0].style.backgroundColor = "";
+	 
+	} 
+}
+
+function bgSwapApply(tabletr) {
+	
+trs = document.getElementById(tabletr).getElementsByTagName('TR');
+ 
+for(var i=3; i<trs.length; i++){
+	 trs[i].onmouseover = function() { swapbg(this); }
+	trs[i].onmouseout = function() { swapbgBack(this); }
+	 
+	} 
+}
+ </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body onLoad="bgSwapApply('table-pod')">
+<div id="breadcrumbs"><a title="Save to App Links" href="#" style="color:#ffffff;"><img src="images/icon/link_add.png" alt="Save to App Links" width="16" height="16" align="absmiddle" style="border:none;padding:0;margin:0;"></a>&nbsp;&nbsp; <a href="#"> ET2(SS) Jones Home</a></div>
+<div class="top-bar"><img style="float:left;" src="images/banner_left2.jpg" width="77" height="48">
+   <div id="header-left"> ET2(SS) Jones Home </div>
+   <div class="right">
+      <div><img src="images/icon/helpcenter-28x28.png" width="27" height="27"><br />
+         Help</div>
+      <div id='customize-link'> <img title="Edit Portal Prefs" src="images/icon/applications_system.png" width="27" height="27"><br />
+         Customize</div>
+      <div><img src="images/icon/logout2.png" width="27" height="27"><br />
+         Logout</div>
+   </div>
+</div>
+<br style='clear:both;' />
+<ul class="sf-menu">
+   <li><a href="#">Home</a>
+      <ul>
+         <li><a href="#">Edit Home Screen</a></li>
+      </ul>
+   </li>
+   <li><a href="#">Departments</a>
+      <ul>
+         <li><a href="#">USS Virginia</a>
+            <ul>
+               <li><a href="#">Command Page</a></li>
+            </ul>
+         </li>
+         <li><a href="#">-Executive Dept </a>
+            <ul>
+               <li><a href="#">Ship's Office </a></li>
+               <li><a href="#">COB</a></li>
+               <li><a href="#">Wardroom</a></li>
+            </ul>
+         <li><a href="#">-Engineering Dept </a>
+            <ul>
+               <li><a href="#">RC Division</a></li>
+               <li><a href="#">M-Division</a></li>
+               <li><a href="#">E-Division</a></li>
+               <li><a href="#">RL-Division</a></li>
+               <li><a href="#">A-Division</a></li>
+            </ul>
+         </li>
+         <li><a href="#">-Navigation Ops</a>
+            <ul>
+               <li><a href="#">Nav Division</a>
+               <li><a href="#">Comms Division</a></li>
+               <li><a href="#">IT Division</a></li>
+            </ul>
+         </li>
+         <li><a href="#">-Combat Systems </a>
+            <ul>
+               <li><a href="#">Deck Division</a> </li>
+            </ul>
+            <ul>
+               <li><a href="#">Dive Division</a></li>
+               <li><a href="#">TM Division</a></li>
+               <li><a href="#">FT Division</a></li>
+               <li><a href="#">ST Division</a></li>
+            </ul>
+         <li><a href="#">-Supply Department </a>
+            <ul>
+               <li><a href="#">CS Division</a> </li>
+               <li><a href="#">LS Division</a></li>
+            </ul>
+         <li><a href="#">Administrator's Page</a></li>
+      </ul>
+   </li>
+   <li><a href="#">Training</a>
+      <ul>
+         <li><a href="#">My Courses</a></li>
+         <li><a href="#">Plans</a> </li>
+         <li><a href="#">Groups</a> </li>
+         <li><a href="#">Drills/Evolution Monitoring</a> </li>
+         <li><a href="#">Training Deficiencies </a>
+            <ul>
+               <li><a href="#">Training Deficiency Log</a> </li>
+               <li><a href="#">Deficiencies Required</a> </li>
+               <li><a href="#">Deficiencies Created</a></li>
+            </ul>
+         </li>
+         <li><a href="#">Exams</a>
+            <ul>
+               <li><a href="#">Exam Auto-Generation</a></li>
+               <li><a href="#">Exam Administration</a> </li>
+               <li><a href="#">Question Administration</a> </li>
+               <li><a href="#">Grading Rules</a></li>
+            </ul>
+         </li>
+         <li><a href="#">Action Items </a>
+            <ul>
+               <li><a href="#">Actions Required </a></li>
+               <li><a href="#">Actions Created </a></li>
+               <li><a href="#">Action Items Report</a></li>
+            </ul>
+         </li>
+         <li><a href="#">Reports </a>
+            <ul>
+               <li><a href="#">Goal Achievment</a></li>
+               <li><a href="#">Ind. Exam Grades</a></li>
+               <li><a href="#">NAVSEA 08</a></li>
+               <li><a href="#">Planned Vs. Actual</a></li>
+               <li><a href="#">Senior Management</a></li>
+               <li><a href="#">Exam Event Attendance</a></li>
+               <li><a href="#">Exam Matrix</a></li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li><a href="#">Qualifications</a>
+      <ul>
+         <li><a href="#">Qual Cards</a> </li>
+         <li><a href="#">Status Report</a></li>
+      </ul>
+   <li><a href="#">Billet</a>
+      <ul>
+         <li><a href="#">Action Items</a>
+            <ul>
+               <li><a href="#">Actions Required</a></li>
+               <li><a href="#">Actions Created</a></li>
+            </ul>
+         </li>
+         <li><a href="#">Berthing</a></li>
+         <li><a href="#">Rig for Dive</a>
+            <ul>
+               <li><a href="#">Dive watch bill</a></li>
+               <li><a href="#">Dive Record Book</a></li>
+               <li><a href="#">Track</a></li>
+               <li><a href="#">Report</a></li>
+               <li><a href="#">Exceptions</a></li>
+            </ul>
+         </li>
+         <li><a href="#">Routing</a>
+            <ul>
+               <li><a href="#">Instances</a></li>
+               <li><a href="#">Processes</a></li>
+               <li><a href="#">Assignments</a></li>
+               <li><a href="#">Reports</a>
+                  <ul>
+                     <li><a href="#">Instances</a></li>
+                     <li><a href="#">Processes</a> </li>
+                     <li><a href="#">Assignments</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li><a href="#">References</a>
+      <ul>
+         <li><a href="#">Digital Library</a>
+            <ul>
+               <li><a href="#">ATIS</a></li>
+               <li><a href="#">Combined ED</a></li>
+               <li><a href="#">GenITP</a></li>
+               <li><a href="#">IS Metadata</a></li>
+               <li><a href="#">IS Simple</a></li>
+               <li><a href="#">SCLSIS\M&amp;CMI</a></li>
+               <li><a href="#">SDI</a></li>
+               <li><a href="#">TM</a></li>
+               <li><a href="#">VLI</a></li>
+            </ul>
+         </li>
+         <li><a href="#">SSM</a></li>
+         <li><a href="#">RPM</a></li>
+         <li><a href="#">S&amp;EPM</a></li>
+         <li><a href="#">Water Chem. Manual</a></li>
+         <li><a href="#">RADCON Manual</a></li>
+         <li><a href="#">EDM</a></li>
+         <li><a href="#">EDOM/ARDOM</a></li>
+         <li><a href="#">RDOM</a></li>
+      </ul>
+   </li>
+   <li><a href="#">Tools</a>
+      <ul>
+         <li><a href="#">MMR </a></li>
+         <li><a href="#">MRAS</a></li>
+         <li><a href="#">STATS </a></li>
+         <li><a href="#">SOMS </a></li>
+         <li><a href="#">SKED </a></li>
+         <li><a href="#">Maintenance </a>
+            <ul>
+               <li><a href="#">Planning</a></li>
+               <li><a href="#">Tagouts</a></li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+</ul>
+<br style='clear:both;font-size:30px;' />
+<div id="container-content">
+   <div id="col-left">
+      <div id="messaging" class="portlet">
+         <h3 class="fixed" title="fixed position portlet">Alerts &amp; Messages </h3>
+         <div class="portlet-content"><a href="#">You have 10 new Messages</a></div>
+      </div>
+      <div  id='mail-portlet' class="portlet" style="overflow:hidden; border:solid 1px #000033;">
+         <h3 class="fixed" title="fixed position portlet" id="smail">Mail</h3>
+         <div class="portlet-content" id='pmail'>
+            <table style="border-bottom:1;" cellpadding="1" cellspacing="0" id="portlet-mail" bgcolor="#FFFFFF">
+               <tbody>
+                  <tr valign="middle" bgcolor="#d6e7fb">
+                     <th width="7%" align="center" valign="middle"><a href="Inbox/?Cmd=contents&amp;SortBy=Item%20Type&amp;SortOrder=ascending"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></th>
+                     <th width="19%" align="left" valign="middle"><a href="Inbox/?Cmd=contents&amp;SortBy=From&amp;SortOrder=ascending">From</a></th>
+                     <th width="46%" align="left" valign="middle"><a href="Inbox/?Cmd=contents&amp;SortBy=Subject&amp;SortOrder=ascending">Subject</a></th>
+                     <th width="28%" align="left" valign="middle"><a href="Inbox/?Cmd=contents&amp;SortBy=Received&amp;SortOrder=ascending">Received</a></th>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/NTDPS%20Redesign%20Meeting%20Minutes.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/NTDPS%20Redesign%20Meeting%20Minutes.EML?Cmd=open">Covington, Michael</a></td>
+                     <td valign="top"><a href="Inbox/NTDPS%20Redesign%20Meeting%20Minutes.EML?Cmd=open">Words here are for concept placement</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/NTDPS%20Redesign%20Meeting%20Minutes.EML?Cmd=open"> 4/19/2010 5:47 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/NTDPS%20Re-Skin%20and%20Crewmember%20Page%20Revamp.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/NTDPS%20Re-Skin%20and%20Crewmember%20Page%20Revamp.EML?Cmd=open">Covington, Michael</a></td>
+                     <td valign="top"><a href="Inbox/NTDPS%20Re-Skin%20and%20Crewmember%20Page%20Revamp.EML?Cmd=open">Drill Guide</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/NTDPS%20Re-Skin%20and%20Crewmember%20Page%20Revamp.EML?Cmd=open"> 4/19/2010 11:22 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/crewmember%20home%20page..EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/crewmember%20home%20page..EML?Cmd=open">Rustici, Eric</a></td>
+                     <td valign="top"><a href="Inbox/crewmember%20home%20page..EML?Cmd=open">Qualifications</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/crewmember%20home%20page..EML?Cmd=open"> 4/19/2010 11:03 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-4.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-4.EML?Cmd=open">Covington, Michael</a></td>
+                     <td valign="top"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-4.EML?Cmd=open">You are reading sample content here.</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-4.EML?Cmd=open"> 4/19/2010 9:08 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/RE:%20John%20Gadbois-2.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/RE:%20John%20Gadbois-2.EML?Cmd=open">Scaglione, Chris</a></td>
+                     <td valign="top"><a href="Inbox/RE:%20John%20Gadbois-2.EML?Cmd=open">RE: Quals</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/RE:%20John%20Gadbois-2.EML?Cmd=open"> 4/19/2010 8:51 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/RE:%20John%20Gadbois.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/RE:%20John%20Gadbois.EML?Cmd=open">Scott, Timothy</a></td>
+                     <td valign="top"><a href="Inbox/RE:%20John%20Gadbois.EML?Cmd=open">RE:Next week</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/RE:%20John%20Gadbois.EML?Cmd=open"> 4/19/2010 8:42 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/Weekly%20Status%20Meeting-5.EML?Cmd=open"><img src="images/outlook_icons/icon-mtgreq.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/Weekly%20Status%20Meeting-5.EML?Cmd=open">Lounsbury, Ron</a></td>
+                     <td valign="top"><a href="Inbox/Weekly%20Status%20Meeting-5.EML?Cmd=open">Weekly Status Meeting</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/Weekly%20Status%20Meeting-5.EML?Cmd=open"> 4/19/2010 8:40 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/John%20Gadbois.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/John%20Gadbois.EML?Cmd=open">Scaglione, Chris</a></td>
+                     <td valign="top"><a href="Inbox/John%20Gadbois.EML?Cmd=open">Bruins win</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/John%20Gadbois.EML?Cmd=open"> 4/19/2010 8:19 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/Re:%20POW.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/Re:%20POW.EML?Cmd=open">Gadbois, John S</a></td>
+                     <td valign="top"><a href="Inbox/Re:%20POW.EML?Cmd=open">Content is for position only</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/Re:%20POW.EML?Cmd=open"> 4/18/2010 1:59 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-3.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-3.EML?Cmd=open">Dahlin, Pete</a></td>
+                     <td valign="top"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-3.EML?Cmd=open">RE:Watchbill</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-3.EML?Cmd=open"> 4/16/2010 3:01 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-2.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-reply.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-2.EML?Cmd=open">Spencer, Lennie</a></td>
+                     <td valign="top"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-2.EML?Cmd=open">RE: Home Page Comments</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps-2.EML?Cmd=open"> 4/16/2010 2:52 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/FW:%20CarePoint%20UI%20Standards.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-reply.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/FW:%20CarePoint%20UI%20Standards.EML?Cmd=open">Macks, Chris</a></td>
+                     <td valign="top"><a href="Inbox/FW:%20CarePoint%20UI%20Standards.EML?Cmd=open">FW:  UI Standards</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/FW:%20CarePoint%20UI%20Standards.EML?Cmd=open"> 4/16/2010 2:30 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-reply.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps.EML?Cmd=open">Covington, Michael</a></td>
+                     <td valign="top"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps.EML?Cmd=open">RE: 74 Norton Commando</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/RE:%20common%20menu%20structure%20for%20ntdps.EML?Cmd=open"> 4/16/2010 1:52 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/RE:%20debugbar_xF8FF_ietester.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/RE:%20debugbar_xF8FF_ietester.EML?Cmd=open">Lounsbury, Ron</a></td>
+                     <td valign="top"><a href="Inbox/RE:%20debugbar_xF8FF_ietester.EML?Cmd=open">RE: Qualifications</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/RE:%20debugbar_xF8FF_ietester.EML?Cmd=open"> 4/16/2010 12:19 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/%28nwl%29%20%20Your%20April%20Hertz%20%231%20Club%20Gold%20Account%20Summary.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/%28nwl%29%20%20Your%20April%20Hertz%20%231%20Club%20Gold%20Account%20Summary.EML?Cmd=open">Hertz #1 Club Gold</a></td>
+                     <td valign="top"><a href="Inbox/%28nwl%29%20%20Your%20April%20Hertz%20%231%20Club%20Gold%20Account%20Summary.EML?Cmd=open">( Hertz #1 Club Gold Account Summary</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/%28nwl%29%20%20Your%20April%20Hertz%20%231%20Club%20Gold%20Account%20Summary.EML?Cmd=open"> 4/16/2010 10:49 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/POW.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/POW.EML?Cmd=open">Scaglione, Chris</a></td>
+                     <td valign="top"><a href="Inbox/POW.EML?Cmd=open">POW</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/POW.EML?Cmd=open"> 4/16/2010 8:26 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/RE:%20crewmember%20menu%20revised%204-14-2009.docx-2.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-encrypted-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/RE:%20crewmember%20menu%20revised%204-14-2009.docx-2.EML?Cmd=open">McMillan, Thomas</a></td>
+                     <td valign="top"><a href="Inbox/RE:%20crewmember%20menu%20revised%204-14-2009.docx-2.EML?Cmd=open">RE: Dolphis</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/RE:%20crewmember%20menu%20revised%204-14-2009.docx-2.EML?Cmd=open"> 4/15/2010 1:18 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/RE:%20yesterday%27s%20meeting.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-signed-forward.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/RE:%20yesterday%27s%20meeting.EML?Cmd=open">Wong, Jason H CIV NUWC, 2516</a></td>
+                     <td valign="top"><a href="Inbox/RE:%20yesterday%27s%20meeting.EML?Cmd=open">RE: Yesterday's Drill</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/RE:%20yesterday%27s%20meeting.EML?Cmd=open"> 4/14/2010 4:54 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/RE:-127.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-reply.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/RE:-127.EML?Cmd=open">Scaglione, Chris</a></td>
+                     <td valign="top"><a href="Inbox/RE:-127.EML?Cmd=open">RE: NSFW</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/RE:-127.EML?Cmd=open"> 4/14/2010 2:48 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/DevTrack-15.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-reply.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/DevTrack-15.EML?Cmd=open">Pelletier, Karen</a></td>
+                     <td valign="top"><a href="Inbox/DevTrack-15.EML?Cmd=open">Venice Beach</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/DevTrack-15.EML?Cmd=open"> 4/14/2010 12:51 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/No%20Subject-2240.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/No%20Subject-2240.EML?Cmd=open">Gadbois, John S</a></td>
+                     <td valign="top"><a href="Inbox/No%20Subject-2240.EML?Cmd=open">&nbsp;Norton Commando</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/No%20Subject-2240.EML?Cmd=open"> 4/14/2010 11:34 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/IETester.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/IETester.EML?Cmd=open">Lounsbury, Ron</a></td>
+                     <td valign="top"><a href="Inbox/IETester.EML?Cmd=open">Mid Rats</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/IETester.EML?Cmd=open"> 4/14/2010 11:25 AM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/NTDPS%20OMI%20top%20level%20menu.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-reply.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/NTDPS%20OMI%20top%20level%20menu.EML?Cmd=open">Dahlin, Pete</a></td>
+                     <td valign="top"><a href="Inbox/NTDPS%20OMI%20top%20level%20menu.EML?Cmd=open">NTDPS OMI top level menu</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/NTDPS%20OMI%20top%20level%20menu.EML?Cmd=open"> 4/13/2010 4:53 PM</a></td>
+                  </tr>
+                  <tr>
+                     <td valign="top" align="center"><a href="Inbox/FW:%20Watch_Turnover%20v8.pptx.EML?Cmd=open"><img src="images/outlook_icons/icon-msg-read.gif" width="16" border="0" height="16"></a></td>
+                     <td valign="top"><a href="Inbox/FW:%20Watch_Turnover%20v8.pptx.EML?Cmd=open">Dahlin, Pete</a></td>
+                     <td valign="top"><a href="Inbox/FW:%20Watch_Turnover%20v8.pptx.EML?Cmd=open">FW: Watch_Turnover v8.pptx</a></td>
+                     <td valign="top" nowrap="nowrap"><a href="Inbox/FW:%20Watch_Turnover%20v8.pptx.EML?Cmd=open"> 4/13/2010 12:09 PM</a></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div class="column" style="width:100%;">
+         <div id="container-news" class="portlet">
+            <h3  class="movable"><a href="javascript:void();" onClick="swapTab(this,'news')">News</a> | <a href="javascript:void();" onClick="swapTab(this,'sports')">Sports</a> </h3>
+            <div class="portlet-content">
+               <ul class="link-list">
+                  <li><a href="javascript:void();" rel=":ap:20100420:ap_on_sc:eu_volcano_science">Threat of new, larger   Icelandic eruption looms</a></li>
+                  <li><a href="javascript:void();" rel=":ap:us_louisiana_oil_rig_explosion"> Oil   rig explodes off Louisiana coast; 11 missing </a></li>
+                  <li><a href="javascript:void();" rel=":space:20100421:sc_space:whatwillnasadowiththeretiredspaceshuttles"> What will NASA do with the retired space shuttles? </a> </li>
+                  <li><a href="javascript:void();"> FBI, IRS raid   NY state senator's Bronx clinic </a> </li>
+               </ul>
+            </div>
+         </div>
+         <div  id='menu' class="portlet">
+            <h3 class="movable">Menu</h3>
+            <div class="portlet-content"> <b>Breakfast:</b> Scrambled eggs & bacon<br />
+               <b>Lunch:</b> Spagetti <br />
+               <b>Dinner:</b> Open Face Turkey <br />
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="col-right">
+      <div id="pod-panel" class="portlet">
+         <h3 class=" fixed" title="fixed position portlet"> POD | POW - <small>Plan of the Day 11/04/2010</small></h3>
+         <div class="portlet-content" style="height:330px;overflow:auto;display:block;position:relative;">
+            <table id="table-pod" border="0" cellspacing="0" cellpadding="0" style="width:100%;border:solid 1px #666 !important;" bgcolor="#FFFFFF">
+               <tr>
+                  <th colspan="3" align="center" valign="top" bgcolor="#dddddd"></th>
+               </tr>
+               <tr>
+                  <th width="100" height="15" align="center" valign="middle" style="background-image:url(images/smallbg_gray.jpg); background-repeat:repeat-x; font-weight:normal" scope="col">Time</th>
+                  <th scope="col" width="224" align="center" valign="middle" style="background-image:url(images/smallbg_gray.jpg); background-repeat:repeat-x; font-weight:normal" > Thursday </th>
+                  <th scope="col" width="188" align="center" valign="middle" style="background-image:url(images/smallbg_gray.jpg); background-repeat:repeat-x; ">Remarks</th>
+               </tr>
+               <tr>
+                  <th colspan="2" align="center" valign="top" bgcolor="#ffffff">&nbsp;</th>
+                  <td width="188" rowspan="22" valign="top" style="font-size: 10px;background-color:#fff;">All, crew members are reminded to turn in their TLD prior to checking out on Leave.</td>
+               </tr>
+               <tr onMouseOver="swapbg(this)" onMouseOut="swapbgBack(this)">
+                  <th align="center" valign="top" bgcolor="#ffffff">0000-0100</th>
+                  <td valign="top" bgcolor="#ffffff">0030 Afterwatch Cleanup</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top">0100-0500</th>
+                  <td valign="top">0430 Drill PreBrief <strong>(ERML)</strong></td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top" bgcolor="#eeeeee">0500-0600</th>
+                  <td valign="top" bgcolor="#eeeeee">Breakfast <strong>(CM) </strong><br />
+                     0530 Sec 1 Relieve the watch</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top">0600-0700</th>
+                  <td valign="top">0615 Drill Brief <strong>(WR)</strong><br />
+                     0630 Afterwatch Cleanup</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top" bgcolor="#ffffff">0700-0800</th>
+                  <td valign="top" bgcolor="#ffffff">DRILLS</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top">0800-0900</th>
+                  <td valign="top">&nbsp;</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top" bgcolor="#ffffff">0900-1000</th>
+                  <td valign="top" bgcolor="#ffffff">&nbsp;</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top">1000-1100</th>
+                  <td valign="top">1000 Drill Critique <strong>(WR)</strong><br />
+                     1030 Drill Debrief <strong>(CM)</strong> Sec 3</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top" bgcolor="#eeeeee">1100-1200</th>
+                  <td valign="top" bgcolor="#eeeeee">Lunch <strong>(CM)</strong><br />
+                     1130 Sec 2 Relieve the watch</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top">1200-1300</th>
+                  <td valign="top">1230 Afterwatch Cleanup</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top" bgcolor="#ffffff">1300-1400</th>
+                  <td valign="top" bgcolor="#ffffff">Drill Debrief <strong>(CM)</strong> Sec 1</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top">1400-1500</th>
+                  <td valign="top">&nbsp;</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top" bgcolor="#ffffff">1500-1600</th>
+                  <td valign="top" bgcolor="#ffffff">&nbsp;</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top">1600-1700</th>
+                  <td valign="top">&nbsp;</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top" bgcolor="#eeeeee">1700-1800</th>
+                  <td valign="top" bgcolor="#eeeeee">Dinner <strong>(CM)</strong><br />
+                     1730 Sec 3 Relieve the watch</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top">1800-1900</th>
+                  <td valign="top">1830 Afterwatch Cleanup</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top" bgcolor="#ffffff">1900-2000</th>
+                  <td valign="top" bgcolor="#ffffff">Navigation Training Review- <strong>(WR)</strong> Nav</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top">2000-2100</th>
+                  <td valign="top">Movie Call <strong>(CM)</strong></td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top" bgcolor="#ffffff">2100-2200</th>
+                  <td valign="top" bgcolor="#ffffff">&nbsp;</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top">2200-2300</th>
+                  <td valign="top">&nbsp;</td>
+               </tr>
+               <tr>
+                  <th align="center" valign="top" bgcolor="#ffffff">2300-2400</th>
+                  <td valign="top" bgcolor="#ffffff">MidRats <strong>(CM)</strong><br />
+                     2330 Sec 1 Relieve</td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <div class="column" style="width:62%;">
+         <div id='quals' class="portlet">
+            <h3  class="movable" id="qualifications"> <a class="active-link" href="javascript:void();" onClick="changeTab('quals')">Qualifications</a></h3>
+            <div class="portlet-content" style="height:65px;overflow:auto;">
+               <table id="contentTable" style="table-layout: fixed; width: 100%;margin:0;" cellpadding="2px" cellspacing="0">
+                  <tr>
+                     <td colspan='7'>ET2(SS) Jones</td>
+                     <td colspan='3'>Started: 2009 Sep 22</td>
+                     <td colspan='4'>Due: 2009 Oct 22</td>
+                     <td style="background-color: #fcc">Status: -79</td>
+                  </tr>
+                  <tr>
+                     <td style="background-color: #ddd; text-align: center; vertical-align: middle" colspan='6' rowspan='2'>Section / Item</td>
+                     <td valign="top" style="text-align: center; vertical-align: middle; background-color: #ddd" rowspan='2'>Items<br>
+                        To Go</td>
+                     <td colspan='3' style="text-align: center; vertical-align: middle; background-color: #ddd">Points</td>
+                     <td rowspan='2' style="text-align: center; vertical-align: middle; background-color: #ddd">Prereqs<br>
+                        Links</td>
+                     <td colspan='4' style="background-color: #ddd; text-align: center">Next Checkout</td>
+                  </tr>
+                  <tr>
+                     <td style="background-color: #ddd; text-align: center; vertical-align: middle;">Total</td>
+                     <td style="background-color: #ddd; text-align: center; vertical-align: middle;">Actual</td>
+                     <td style="background-color: #ddd; text-align: center; vertical-align: middle;">To Go</td>
+                     <td style="background-color: #ddd; text-align: center; vertical-align: middle;" colspan='2'>Date / Time</td>
+                     <td colspan='2' style="background-color: #ddd; text-align: center; vertical-align: middle; ">Certifier</td>
+                  </tr>
+                  <tr class="headerRow">
+                     <td colspan='6' style="font-weight: bold">Prerequisites</td>
+                     <td style="font-weight: bold; text-align: right">2</td>
+                     <td style="font-weight: bold; text-align: right">2</td>
+                     <td style="font-weight: bold; text-align: right">0</td>
+                     <td style="font-weight: bold; text-align: right">2</td>
+                     <td></td>
+                     <td colspan='2'></td>
+                     <td colspan='2'></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">1.1</td>
+                     <td colspan='6'>Be qualified Submarines</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">1.2</td>
+                     <td colspan='6'>Be a CPO, First Class Petty Officer or Second Class Petty Officer designated as COW candidate</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr class="headerRow">
+                     <td colspan='6' style="font-weight: bold">Knowledge Factors</td>
+                     <td style="font-weight: bold; text-align: right">50</td>
+                     <td style="font-weight: bold; text-align: right">65</td>
+                     <td style="font-weight: bold; text-align: right">16</td>
+                     <td style="font-weight: bold; text-align: right">49</td>
+                     <td></td>
+                     <td colspan='2'></td>
+                     <td colspan='2'></td>
+                  </tr>
+                  <tr class="blockRow">
+                     <td colspan="7">Demonstrate a thorough knowledge of the following systems through oral examination including drawing the system</td>
+                     <td style="text-align: right">18</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">18</td>
+                     <td></td>
+                     <td colspan='2'></td>
+                     <td colspan='2'></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.1</td>
+                     <td colspan='6'>Trim and Drain Sytem</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.2</td>
+                     <td colspan='6'>External Hydraulics</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.3</td>
+                     <td colspan='6'>Steering and Diving Hydraulics</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.4</td>
+                     <td colspan='6'><a style="color: #06c;" target="_blank" href="javascript:void();">Ship's Service Hydraulics</a></td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 30</td>
+                     <td colspan='2'></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.5</td>
+                     <td colspan='6'>Hydraulic Power Plant</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.6</td>
+                     <td colspan='6'>High Pressure Air</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.7</td>
+                     <td colspan='6'>Ship's Service Air</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.8</td>
+                     <td colspan='6'>Low Pressure Blow</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.9</td>
+                     <td colspan='6'>Emergency Blow</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.10</td>
+                     <td colspan='6'>Ventilation</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.11</td>
+                     <td colspan='6'>Snorkel and Diesel System</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.12</td>
+                     <td colspan='6'>Snorkel induction and Safety Circuit, 1SN</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.13</td>
+                     <td colspan='6'>Snorkel Exhaust Safety Circuit, 2SN</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.14</td>
+                     <td colspan='6'>Depth Control System</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.15</td>
+                     <td colspan='6'>Emergency Flood Control</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.16</td>
+                     <td colspan='6'>Communications and Alarm Circuits</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.17</td>
+                     <td colspan='6'>Ship's Battery and Support Systems</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.18</td>
+                     <td colspan='6'>Masts and Antennas</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr style="background-color: #ddd">
+                     <td colspan="10">Block signature</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 720)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr class="blockRow">
+                     <td colspan="7">Casualty Procedures:  Demonstrate a thorough knowledge of the following casualty including actions of all watchstanders and precautions through oral examination</td>
+                     <td style="text-align: right">19</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">19</td>
+                     <td></td>
+                     <td colspan='2'></td>
+                     <td colspan='2'></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.19</td>
+                     <td colspan='6'>General Emergency</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.20</td>
+                     <td colspan='6'>Emergency Ship Control</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.21</td>
+                     <td colspan='6'>Collision</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.22</td>
+                     <td colspan='6'>Flooding</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.23</td>
+                     <td colspan='6'>Fire</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.24</td>
+                     <td colspan='6'>Toxic Gas</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.25</td>
+                     <td colspan='6'>Loss of Propulsion</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.26</td>
+                     <td colspan='6'>Loss of Electrical Power</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.27</td>
+                     <td colspan='6'>VLS Missile Tube Emergency</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.28</td>
+                     <td colspan='6'>Loss of AC/Ventilation</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.29</td>
+                     <td colspan='6'>Ship Destruction</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.30</td>
+                     <td colspan='6'>Weapons Emergency</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.31</td>
+                     <td colspan='6'>Passive Defense</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.32</td>
+                     <td colspan='6'>Man Overboard</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.33</td>
+                     <td colspan='6'>Abandon Ship</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.34</td>
+                     <td colspan='6'>Major Propulsion Plant Casualty</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.35</td>
+                     <td colspan='6'>Loss of Hydraulic Power</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.36</td>
+                     <td colspan='6'>Emergency Deep</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.37</td>
+                     <td colspan='6'>Accidental Submergence</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr style="background-color: #ddd">
+                     <td colspan="10">Block signature</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.38</td>
+                     <td colspan='6'>Duties and responsibilities of all underway watchstations forward</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr class="blockRow">
+                     <td colspan="7">Operating Procedures</td>
+                     <td style="text-align: right">18</td>
+                     <td style="text-align: right">7</td>
+                     <td style="text-align: right">11</td>
+                     <td></td>
+                     <td colspan='2'></td>
+                     <td colspan='2'></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.39</td>
+                     <td colspan='6'>Rig for Dive</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 744)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.40</td>
+                     <td colspan='6'>Rig for Surface</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 745)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.41</td>
+                     <td colspan='6'>Diving</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 746)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.42</td>
+                     <td colspan='6'>Stationary Diving</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 747)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.43</td>
+                     <td colspan='6'>Surfacing</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 748)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.44</td>
+                     <td colspan='6'>Vertical Surfacing</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 749)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.45</td>
+                     <td colspan='6'>Snorkel/Ventilation</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 750)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.46</td>
+                     <td colspan='6'>Battery Charging</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.47</td>
+                     <td colspan='6'>Maneuvering Procedure</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.48</td>
+                     <td colspan='6'>Propulsion Bill</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.49</td>
+                     <td colspan='6'>Depth Charge</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.50</td>
+                     <td colspan='6'>Deep Submergence</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.51</td>
+                     <td colspan='6'>High Speed Operations</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.52</td>
+                     <td colspan='6'>Silent Running</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.53</td>
+                     <td colspan='6'>Cold Weather</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.54</td>
+                     <td colspan='6'>Reduced Visibility</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.55</td>
+                     <td colspan='6'>Rescue and Assistance</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.56</td>
+                     <td colspan='6'>Repel Boarders Sneak/Attack</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr style="background-color: #ddd">
+                     <td colspan="10">Block signature</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.57</td>
+                     <td colspan='6'>Normal and alternate electrical power supplies to the BCP indications and equipment operated from the BCP</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 763)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.58</td>
+                     <td colspan='6'>Location of local overrides and/or manual operation for all BCP controlled equipment</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 764)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.59</td>
+                     <td colspan='6'>Normal reading and alarm set points for all BCP controlled equipment</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 765)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.60</td>
+                     <td colspan='6'>Normal operation of all equipment operated from the BCP</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 766)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.61</td>
+                     <td colspan='6'>Detailed knowledge of ship's control panel (Modes of planes, rudder operations, power supplies, etc.)</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 767)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.62</td>
+                     <td colspan='6'>Knowledge of SVP and how it affects ship operations</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 768)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.63</td>
+                     <td colspan='6'>Navigation lights and whistle</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 769)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.64</td>
+                     <td colspan='6'>Communication Circuit with the bridge</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 770)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">2.65</td>
+                     <td colspan='6'>Depth Sensing system</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'>2009 Sep 22</td>
+                     <td colspan='2' style='background-color: #cfc'>Administrator 1 (<a href='javascript:void();' onclick='scratch(264, 2, 771)' style='color: #0066cc; font-weight: bold'>Scratch</a>)</td>
+                  </tr>
+                  <tr class="headerRow">
+                     <td colspan='6' style="font-weight: bold">Practical Factors</td>
+                     <td style="font-weight: bold; text-align: right">25</td>
+                     <td style="font-weight: bold; text-align: right">23</td>
+                     <td style="font-weight: bold; text-align: right">0</td>
+                     <td style="font-weight: bold; text-align: right">23</td>
+                     <td></td>
+                     <td colspan='2'></td>
+                     <td colspan='2'></td>
+                  </tr>
+                  <tr class="blockRow">
+                     <td colspan="7">Demonstrate the ability to operate the BCP during the following evolutions</td>
+                     <td style="text-align: right">23</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">23</td>
+                     <td></td>
+                     <td colspan='2'></td>
+                     <td colspan='2'></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.1</td>
+                     <td colspan='6'>Diving (2 times)</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.2</td>
+                     <td colspan='6'>Surfacing</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.3</td>
+                     <td colspan='6'>Ventilating</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">0</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.4</td>
+                     <td colspan='6'>Recirculate Mode</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.5</td>
+                     <td colspan='6'>Ventilate Mode</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.6</td>
+                     <td colspan='6'>Surface Ventilate Mode</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.7</td>
+                     <td colspan='6'>Snorkel Mode</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.8</td>
+                     <td colspan='6'>Emergency Ventilate Mode</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.9</td>
+                     <td colspan='6'>Snorkeling</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.10</td>
+                     <td colspan='6'>TDU Operations</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.11</td>
+                     <td colspan='6'>Periscope Depth Operations (2 times)</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.12</td>
+                     <td colspan='6'>General Emergency</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.13</td>
+                     <td colspan='6'>Collision</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.14</td>
+                     <td colspan='6'>Flooding</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.15</td>
+                     <td colspan='6'>Fire</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.16</td>
+                     <td colspan='6'>Loss of Electrical Power</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.17</td>
+                     <td colspan='6'>Loss of Propulsion</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.18</td>
+                     <td colspan='6'>Compute and enter normal dive compensation</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.19</td>
+                     <td colspan='6'>Stand a minimum of three watches under instruction on the BCP.  (At least one watch surfaced)</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.20</td>
+                     <td colspan='6'>OPNAVINST 3120.32, COMSUBLANTINST 5101.5 TAGOUT USERS MANUEL NAVSEA S0400-AD-URM-010/TUM, (Tagout Procedures)</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.21</td>
+                     <td colspan='6'>Commanding Officers Standing Orders</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.22</td>
+                     <td colspan='6'>NAVSEA S9086-G1-STM 010, NSTM CH 223 Vol. 1, NAVSEA S9223-AF-MMO-010/882H Submarine Main Storage Battery Technical Manual.  JFMM Vol. IV, Appendix 3B</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.23</td>
+                     <td colspan='6'>Understand the role of the COW in supervision, operation and monitoring of systems which effect remotely operated key reactor plant valves (EDOM part II, Section 3.8.8).</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">3.24</td>
+                     <td colspan='6'>Barrier Criteria for maintenance, COMSUBLANT/COMSUBPACINST 4790.4 Vol. IV, Joint Fleet Maintenance Manual.</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr style="background-color: #ddd">
+                     <td colspan="10">Block signature</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr class="headerRow">
+                     <td colspan='6' style="font-weight: bold">End of Card Items</td>
+                     <td style="font-weight: bold; text-align: right">5</td>
+                     <td style="font-weight: bold; text-align: right">5</td>
+                     <td style="font-weight: bold; text-align: right">0</td>
+                     <td style="font-weight: bold; text-align: right">5</td>
+                     <td></td>
+                     <td colspan='2'></td>
+                     <td colspan='2'></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">4.1</td>
+                     <td colspan='6'>Satisfactorily completed a comprehensive written examination on the above areas administered by the Ship's Diving Officer.</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">4.2</td>
+                     <td colspan='6'>Satisfactorily completed a comprehensive oral examination on the above areas administered by the Ship's Diving Officer. Recommended for qualification as Chief of the Watch.</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">4.3</td>
+                     <td colspan='6'>Satisfactorily completed a comprehensive oral examination on the above areas administered by the Executive Officer. Certified to be qualified as Chief of the Watch</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Schedule Oral Exam</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">4.4</td>
+                     <td colspan='6'>Qualification entered in Watch Qualification Binder</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 20px">4.5</td>
+                     <td colspan='6'>Service record entry completed</td>
+                     <td style="text-align: right">1</td>
+                     <td style="text-align: right">0</td>
+                     <td style="text-align: right">1</td>
+                     <td>&nbsp;</td>
+                     <td colspan='2'></td>
+                     <td colspan='2'><a href="javascript:void();" style="color: #0066cc; font-weight: bold;">Sign</a></td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="column" style="width:35%;">
+         <div  id='right-2' class="portlet" style="margin-right:0;">
+            <h3  class="movable">Time &amp; Daylight</h3>
+            <div class="portlet-content"> <span style="font-size:10px;font-family:Arial, Helvetica, sans-serif;"> Sunrise:                   05:57 <br />
+               Sun transit:               12:47 <br />
+               Sunset:                    19:38 </span> <br />
+            </div>
+         </div>
+         <div id='container-links' class="portlet" style="margin-right:0;">
+            <h3 id='link-header' class="movable">App Links</h3>
+            <div class="portlet-content" >
+               <ul class="link-list">
+                  <li ><a href="#">Training Plans</a></li>
+                  <li><a href="#">References > EDM</a></li>
+                  <li> <a href="#">My Courses</a></li>
+                  <li> <a href="#">Routing>Reports>Assignments</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+<div id="links-dialog" title="Manage Links">
+   <table width="90%" border="1" align="center" cellpadding="2" cellspacing="0">
+      <tr style="height:1em;background-image:url(images/smallbg-fixed.jpg);background-repeat:repeat-x;">
+         <th width="10%" scope="col">Portlet</th>
+         <th width="25%" scope="col">Title</th>
+         <th width="37%" scope="col">Path/Link</th>
+         <th width="12%" scope="col">Make Active</th>
+         <th width="12%" scope="col">Delete</th>
+      </tr>
+      <tr>
+         <td align="left" scope="col"><select name="select" id="select">
+               <option selected="selected">Personal</option>
+               <option>App</option>
+            </select></td>
+         <td scope="col"><input name="textfield" type="text" id="textfield" value="My Training" size="50" /></td>
+         <td scope="col"> /trn/trainingPlans.jsp</td>
+         <td nowrap="nowrap" scope="col"><input type="radio" name="radio" id="radio" value="radio" />
+            Y
+            <input type="radio" name="radio" id="radio2" value="radio" />
+            N</td>
+         <td scope="col"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+      </tr>
+      <tr>
+         <td><select name="select2" id="select2">
+               <option>Personal</option>
+               <option>Work</option>
+            </select></td>
+         <td><input name="textfield2" type="text" id="textfield2" value="Crewmember Page" size="50" /></td>
+         <td scope="col"> /portal/PortletServlet?page=Crewmember_Page</td>
+         <td nowrap="nowrap" scope="col"><input type="radio" name="radio" id="radio" value="radio" />
+            Y
+            <input type="radio" name="radio" id="radio2" value="radio" />
+            N</td>
+         <td scope="col"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+      </tr>
+      <tr>
+         <td><select name="select3" id="select3">
+               <option>Personal</option>
+               <option selected>App</option>
+            </select></td>
+         <td><input name="textfield3" type="text" id="textfield3" value="Goals" size="50" /></td>
+         <td scope="col">/rpt/GoalAchievementReport.jsp</td>
+         <td nowrap="nowrap" scope="col"><input type="radio" name="radio" id="radio" value="radio" />
+            Y
+            <input type="radio" name="radio" id="radio2" value="radio" />
+            N</td>
+         <td scope="col"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+      </tr>
+      <tr>
+         <td><select name="select4" id="select4">
+               <option>Personal</option>
+               <option selected>App</option>
+            </select></td>
+         <td><input name="textfield4" type="text" id="textfield4" value="Aux Div Quals" size="50" /></td>
+         <td scope="col">/qal/group.jsp?groupID=35</td>
+         <td nowrap="nowrap" scope="col"><input type="radio" name="radio" id="radio" value="radio" />
+            Y
+            <input type="radio" name="radio" id="radio2" value="radio" />
+            N</td>
+         <td scope="col"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+      </tr>
+   </table>
+</div>
+<div class="dialg" id="portlet-dialog">
+   <table width="90%" border="1" cellspacing="2" cellpadding="3" style="padding:1px; margin:1px;">
+      <tr class="half-height">
+         <th width="13%"  scope="col">Active/Inactive</th>
+         <th width="87%" cope="col">Portlet
+            <input style="float:right;" type="submit" name="button" id="button" value="save"></th>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input name="checkbox" type="checkbox" id="checkbox" checked="checked" /></td>
+         <td nowrap="nowrap" scope="col">News/Sports</td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input name="checkbox" type="checkbox" id="checkbox" checked="checked" /></td>
+         <td nowrap="nowrap" scope="col">App Links</td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input name="checkbox6" type="checkbox" id="checkbox6" /></td>
+         <td nowrap="nowrap" scope="col">My Links</td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input name="checkbox" type="checkbox" id="checkbox" checked="checked" /></td>
+         <td nowrap="nowrap" scope="col">Qualifications</td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input name="checkbox" type="checkbox" id="checkbox" /></td>
+         <td nowrap="nowrap" scope="col">Deficiencies</td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input type="checkbox" name="checkbox2" id="checkbox2" /></td>
+         <td nowrap="nowrap" scope="col">Action Items</td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input name="checkbox3" type="checkbox" id="checkbox3" checked="checked" /></td>
+         <td nowrap="nowrap" scope="col">Ship's Meal Menu</td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+         <td nowrap="nowrap" scope="col">My  Workflow </td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+         <td nowrap="nowrap" scope="col">My  Assignments </td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+         <td nowrap="nowrap" scope="col">OOMS  – NG </td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+         <td nowrap="nowrap" scope="col">TDDS  Search </td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input type="checkbox" name="checkbox2" id="checkbox2" /></td>
+         <td nowrap="nowrap" scope="col">AILE </td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input type="checkbox" name="checkbox3" id="checkbox3" /></td>
+         <td nowrap="nowrap" scope="col">System Applications </td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input type="checkbox" name="checkbox4" id="checkbox4" /></td>
+         <td nowrap="nowrap" scope="col">Notes  Portlet </td>
+      </tr>
+      <tr>
+         <td align="center" scope="col"><input type="checkbox" name="checkbox5" id="checkbox5" /></td>
+         <td nowrap="nowrap" scope="col">Cruise Book</td>
+      </tr>
+   </table>
+</div>
+<div id="msg-dialog" title="Messages"> <img src="images/messaging.jpg"/> </div>
+<div id="smail-dialog" title="Mail"><img src="images/outlook_portlet_full.jpg" /></div>
+<div id="quals-dialog" title="Qualifications">
+   <iframe style="width:100%;height:100%;" src="qual_card.html" />
+</div>
+</body>
+</html>

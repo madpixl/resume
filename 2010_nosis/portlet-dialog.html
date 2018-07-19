@@ -1,0 +1,138 @@
+<script type="text/javascript" language="javascript">
+// mouseover rows in POD table
+function swapbg(objct) {
+tds = objct.getElementsByTagName('TD');
+for(var i=0; i<tds.length; i++){
+	 tds[i].style.backgroundColor = "#ffffaa";
+	 } 
+}
+function swapbgBack(objct) {
+tds = objct.getElementsByTagName('TD');
+ 
+for(var i=0; i<tds.length; i++){
+	 tds[i].style.backgroundColor = "#ffffff";
+  } 
+ }
+
+function bgSwapApply(tabletr) {
+ // apply mouseovers
+trs = document.getElementById(tabletr).getElementsByTagName('TR');
+ 
+for(var i=0; i<trs.length; i++){
+	 trs[i].onmouseover = function() { swapbg(this);  }
+	trs[i].onmouseout = function() { swapbgBack(this); }
+	 } 
+ var inputs = document.getElementById(tabletr).getElementsByTagName('input'); 
+  for (i=0; i<inputs.length; ++i) { 
+    if ('checkbox' == inputs[i].type.toLowerCase()) { 
+    inputs[i].onclick = function () {  showMehideMe(this.value,this.checked); }
+   } 
+  }
+	
+	
+ //end function
+  } 
+ 
+
+ 
+
+
+ 
+ 
+</script>
+
+</head>
+
+<body onLoad="bgSwapApply('table-setup')">
+<div align="center" style="margin-left:auto;margin-right:auto;text-align:center">
+<table id="table-setup" style="margin-left:auto;margin-right:auto;" width="95%" height="400" border="0" cellspacing="1" cellpadding="1">
+    
+   <tr>
+      <th width="4%" bgcolor="#6699ee" scope="col">Active/<br />
+         Inactive</th>
+      <th width="2%" bgcolor="#6699ee" scope="col">Move</th>
+      <th width="94%" bgcolor="#6699ee" scope="col">Portlet
+        </th>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox" type="checkbox" id="checkbox" value="container-news" checked="checked" /></td>
+      <td align="center" scope="col"> 
+<img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" />     </td> <td align="left" scope="col">News/Sports</td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox" type="checkbox" id="checkbox" value="container-app-links" checked="checked" /></td>
+      <td align="center" scope="col"> 
+<img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" />     </td> <td align="left" scope="col">App Links</td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input value="container-my-links" name="checkbox6" type="checkbox" id="checkbox6" onClick="parent.showMehideMe(this.value,this.checked)" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">My Links</td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input value="container-quals" name="checkbox" type="checkbox" id="checkbox" checked="checked" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">Qualifications</td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox" type="checkbox" id="checkbox" value="container-deficiencies" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">Deficiencies</td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox2" type="checkbox" id="checkbox2" value="container-action-items" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">Action Items</td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input value="container-meals" name="checkbox3" type="checkbox" id="checkbox3" checked="checked" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">Ship's Meal Menu</td>
+      </tr>
+    <tr>
+      <td align="center" scope="col"><input value="container-time-daylight" name="checkbox3" type="checkbox" id="checkbox3" checked="checked" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">Time and Daylight Hours</td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox" type="checkbox" id="checkbox" value="container-workflow" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">My  Workflow </td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox" type="checkbox" id="checkbox" value="container-assignments" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">My  Assignments </td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox" type="checkbox" id="checkbox" value="container-ooms-ng" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">OOMS  – NG </td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input value="container-tdds-search" type="checkbox" name="checkbox" id="checkbox" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">TDDS  Search </td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox2" type="checkbox" id="checkbox2" value="container-aile" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">AILE </td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox3" type="checkbox" id="checkbox3" value="container-system-apps" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">System Applications </td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox4" type="checkbox" id="checkbox4" value="container-notes" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">Notes  Portlet </td>
+      </tr>
+   <tr>
+      <td align="center" scope="col"><input name="checkbox5" type="checkbox" id="checkbox5" value="container-cruise-book" /></td>
+      <td align="center" nowrap="nowrap" scope="col"><img src="images/icon/arrows.gif" title="move up/down"  width="15" height="15" /></td>
+      <td align="left" nowrap="nowrap" scope="col">Cruise Book</td>
+      </tr>
+</table>
+</div>
