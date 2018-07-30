@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                display:flex;
+                align-items: center;
+                justify-items:center;
+                flex-direction: column;
+            }
+            h1 {
+                
+                font-size:1.5em;
+                box-sizing: border-box;
+                
+            }
+             ul {
+               
+                list-style: none;
+                display: block;
+                width: 60vw;
+                margin: 2rem 10vw;
+            }
+            li {
+                padding: .5em 1em;
+                margin: 1em;
+                cursor: pointer;
+                border: solid 1px;
+                line-height: 1.2em;
+            }
+            .odd {
+                background-color:rgb(170, 207, 216);
+            }
+
+            li:hover {
+                background-color:aquamarine;
+            }
+        </style>
+        <title>
+                Fruit List
+        </title>
+    </head>
+<body>
+   <h1> Dynamically add items to a list of fruits and check to see if the first letter is a vowel.
+    </h1>
+    <ul>    
+    </ul>
+</body>
+<script>
+    //List of some fruits
+    const fruits = ['Banana','Apple','Orange', 'Yam','Peach','Cantalope','Honeydew','Avacado', 'Elderberry' ];
+          fruits.sort();
+    //He's making a list...
+    let odds = false;
+    const fruitlist = document.querySelector("UL");
+    let i=0;
+    fruits.forEach(fruit => {
+        ++i;
+        odds = !odds;
+        newli = document.createElement("li");
+        newli.id = `fruits${i}`;
+        newli.textContent = fruit;
+        //stripey`
+        if(odds) {newli.className = 'odd';}      
+        fruitlist.appendChild(newli);
+    });
+     
+
+
+//check if the first char of a string  is a vowel
+ function compareFirst(f){
+    let stringer ='';
+    const fLetter = f.substring(0,1);
+     
+    if (fLetter.match(/^(A|E|I|O|U)$/)) {
+        stringer = `${fLetter} in ${f} is a vowel`; 
+    } else if (fLetter.match(/^(Y)$/)) {   
+        stringer = `${fLetter} in ${f} is sometimes a vowel`; 
+    } else { 
+        stringer = `${fLetter} in ${f} is not a vowel`; 
+    }
+
+    alert (stringer);
+     
+ }
+
+//capture click and send string to comparator function
+ function checkAlert(e) {
+     
+     if(e.srcElement.tagName === 'LI') {
+        const first = e.srcElement.textContent;  
+        compareFirst(first);
+    } else {
+        return false;
+    }
+}
+
+//Grab all lis in the ul and iterate adding click handler...
+ document.querySelectorAll('ul').forEach(item => addEventListener('click',checkAlert.bind(item),false));
+
+ 
+
+
+</script>
+</html></html>
