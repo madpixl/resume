@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Spinner v.1
+    </title>
+    <link rel="stylesheet" href="css/style.css">
+    </style>
+</head>
+<body>
+<div id="spinner-sample">
+        <div class="container"> 
+ 
+    <h3> Happy To Help Stories </h3>
+ 
+
+<div class="spinner">
+     <div class="card">
+        <img src="img/circle-guy.png"> 
+        <div class="quote">I am in the process of getting a car loan and Linda has made things 
+            so effortless and enjoyable. Thank you very much for helping me save money. </div>
+        <div class="attribution">James Bacon<br>Member Since 2012
+        </div>    
+    </div>
+
+    <div class="card">
+            <img src="img/no-image.png"> 
+            <div class="quote">Bacon ipsum dolor amet cow ham picanha culpa beef ribs in. Ut kevin beef duis meatball ground round. </div>
+            <div class="attribution"></div>    
+        </div>
+
+        <div class="card">
+                <img src="img/no-image.png"> 
+                <div class="quote">Bacon ipsum dolor amet cow ham picanha culpa beef ribs in. Ut kevin beef duis meatball ground round. </div>
+                <div class="attribution"></div>    
+            </div>
+            <div class="card">
+                    <img src="img/nate.png"> 
+                    <div class="quote">Bacon ipsum dolor amet cow ham picanha culpa beef ribs in. Ut kevin beef duis meatball ground round. </div>
+                    <div class="attribution">Nate Axtell <br> Member since 2009</div>    
+                </div>
+                <div class="controls">
+                <button class="button-left" onclick="cardMove(-1)">&#10094;</button>
+                <button class="button-right" onclick="cardMove(+1)">&#10095;</button>
+            </div>
+   </div> 
+</div>
+<script>
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function cardMove(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    let i;
+    const x = document.querySelectorAll(".card");
+    if (n > x.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    x[slideIndex-1].style.display = "flex"; 
+}
+</script>
+</body>
+</html>

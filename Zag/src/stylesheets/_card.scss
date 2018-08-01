@@ -1,0 +1,43 @@
+// _card.scss
+@import 'variables';
+ .card {
+    flex: 0 0 320px;
+    height: 400px;
+    margin-left: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    color:$purple;
+    $numBoxes: 4;
+    $step: 360 / $numBoxes;
+    
+    &:first-child {
+        margin-left: 0;
+    }
+    
+    @for $i from 1 through $numBoxes {
+        &:nth-child(#{$i}) {
+        z-index: $numBoxes - $i + 1;
+        }
+    }
+
+    .quote {
+    font-family: $quote-font;
+    padding:10px 50px; 
+    color:$purple; 
+    text-align:center;  
+    }
+    img {
+    width:136px;
+    height:136px;
+    align-self:center;
+    }
+    .attribution {
+    font-family: $attribution;
+    font-size:1.1em;
+    align-self:center;
+    text-align: center;
+    padding:20px;
+    color:$purple;
+    }
+}
