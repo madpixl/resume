@@ -1,31 +1,35 @@
 @import 'variables';
- 
-  .spinner {
-    position:absolute;
-    top:80px;
+
+  
+  .container {
+    overflow: hidden;
+    width:100vw;
+    max-width:640px;
     display: flex;
-    flex: 1 1 100%;
-    padding: 0;
-    margin: 0;
-    width:auto;
-    -webkit-transition: all 1s ease;  
-    -moz-transition: all 1s ease;  
-    -o-transition: all 1s ease;  
-    -ms-transition: all 1s ease;  
-    transition: all 1s ease;
-    left:0;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position:relative;
   }
-   
+  
+  .slider {
+    display: flex;
+    flex: 1 1 640px;
+    padding: 0;
+    margin: 0 10px;
+  }
+  
   .controls {
     position:absolute;
-    top:140px;
+    top:25%;
     margin-top: 5px;
-    flex: 1 1 100%;
+    flex: 1 1 320px;
     width:100%;
     display: flex;
     align-self: center;
     justify-content: space-between;
     z-index: 1000;
+
     
     button {
       border: none; 
@@ -42,12 +46,16 @@
      height:auto;
     }
   }
-  
-  @media (min-width: 780px) {
-
-    .spinner {
-        position:absolute;
-        top:100px; 
-    }
-}
+  /*
+  .progress-bar {
+    flex: 0 0 80%;
+    height: 4px;
+    border-radius: 4px;
+    margin: 0 10px;
+    background: hsla(0, 90%, 65%, 1);
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    border:solid 1px #fff000;
+  }
+  */
   

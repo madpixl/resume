@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Lato|Muli");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Lato|Muli");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Lato|Muli");
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  flex: 0 0 320px;
+  height: 400px;
+  margin-left: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  color: #594781;
+}
+.card:first-child {
+  margin-left: 0;
+}
+.card:nth-child(1) {
+  z-index: 4;
+}
+.card:nth-child(2) {
+  z-index: 3;
+}
+.card:nth-child(3) {
+  z-index: 2;
+}
+.card:nth-child(4) {
+  z-index: 1;
+}
+.card .quote {
+  font-family: "Lato", sans-serif;
+  padding: 10px 50px;
+  color: #594781;
+  text-align: center;
+}
+.card img {
+  width: 136px;
+  height: 136px;
+  align-self: center;
+}
+.card .attribution {
+  font-family: "Muli", sans-serif;
+  font-size: 1.1em;
+  align-self: center;
+  text-align: center;
+  padding: 20px;
+  color: #594781;
+}
+
+.container {
+  overflow: hidden;
+  width: 100vw;
+  max-width: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  flex: 1 1 640px;
+  padding: 0;
+  margin: 0 10px;
+}
+
+.controls {
+  position: absolute;
+  top: 25%;
+  margin-top: 5px;
+  flex: 1 1 320px;
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+.controls button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #cccccc;
+  padding: 0px 15px;
+  font-size: 4em;
+  font-weight: bold;
+  line-height: 18px;
+  font-weight: 200;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+}
+
+/*
+.progress-bar {
+  flex: 0 0 80%;
+  height: 4px;
+  border-radius: 4px;
+  margin: 0 10px;
+  background: hsla(0, 90%, 65%, 1);
+  transform: scaleX(0);
+  transform-origin: 0% 50%;
+  border:solid 1px #fff000;
+}
+*/
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+h3 {
+  font-family: "Amatic SC", cursive;
+  font-size: 3rem;
+  width: 100vw;
+  margin: 0;
+  text-align: center;
+  color: #594781;
+}
+
+/*# sourceMappingURL=style.css.map */
