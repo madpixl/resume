@@ -19,8 +19,14 @@ $desktop-card-width : 50%;
     }
 }
 @media (max-width: 780px) {
-// things like font family could be generalized, but trying to be efficient with time.
-.card { 
+
+.card {
+    -webkit-transition: all 1.5s ease;  
+    -moz-transition: all 1.5s ease;  
+    -o-transition: all 1.5s ease;  
+    -ms-transition: all 1.5s ease;  
+    transition: all 1.5s ease;
+    opacity:.2;
     width: $mobile-card-width;
     &:first-child{
         opacity:1;
@@ -45,13 +51,6 @@ $desktop-card-width : 50%;
     padding:20px;
     color:$purple;
     }
-    /* transitions worked best on mobile */
-    -webkit-transition: all 1.5s ease;  
-    -moz-transition: all 1.5s ease;  
-    -o-transition: all 1.5s ease;  
-    -ms-transition: all 1.5s ease;  
-    transition: all 1.5s ease;
-    opacity:.2;
 }
 }
  

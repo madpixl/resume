@@ -31,14 +31,13 @@ ol {
 
 @media (max-width: 780px) {
   .card {
-    width: 100%;
-    /* transitions worked best on mobile */
     -webkit-transition: all 1.5s ease;
     -moz-transition: all 1.5s ease;
     -o-transition: all 1.5s ease;
     -ms-transition: all 1.5s ease;
     transition: all 1.5s ease;
     opacity: 0.2;
+    width: 100%;
   }
   .card:first-child {
     opacity: 1;
