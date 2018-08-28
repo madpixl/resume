@@ -6,6 +6,16 @@ const progressBar = player.querySelector('.progress__filled');
 const toggle=player.querySelector('.toggle');
 const skipButtons=player.querySelectorAll('[data-skip]');
 const ranges=player.querySelectorAll('.player__slider');
+ 
+
+
+function alerter(el,msg) {
+    if (el.classList.contains("hidden")) {
+      this.innerHTML = msg;
+    }
+    el.toggle("hidden");
+  }
+
 
 function togglePlay() {
 const method = video.paused?'play':'pause'; 
@@ -26,12 +36,15 @@ function handleRangeUpdate() {
 
 function handleProgress() {
 const percent = (video.currentTime / video.duration)* 100;
-progressBar.style.flexBasis = `${percent}%`;
+const percentStr = `${Math.floor(percent)}%`;
+progressBar.style.flexBasis = percentStr;
+progressBar.dataset.parent = percentStr;
 }
 
 function scrub(e) {
 const scrubTime =(e.offsetX / progress.offsetWidth) * video.duration;
 video.currentTime = scrubTime;
+console.log(scrubTime);
 }
 
 
@@ -52,5 +65,7 @@ progress.addEventListener('click', scrub);
 progress.addEventListener('mousemove',(e) => mousedown && scrub(e));
 progress.addEventListener('mousedown',() => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
+ 
+ 
  
  
