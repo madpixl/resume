@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emojis</title>
+ <style>
+     body {
+        position: absolute;
+        left:5px;
+        top:5px;
+        right:5px;
+        bottom:100vh; 
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     }
+     .container {
+         width:80;
+     }
+     button {
+        font-size:.7em;
+        margin-top:4px;
+     }
+     button:hover{
+      background-color:#8888ff;   
+      color:aliceblue;
+     }
+     .moj-row {
+    margin:1px;
+  padding-left:2em;
+  border-bottom: 3px solid #00000;
+  margin-left:1em;
+  width:70vw;
+  height:4rem;
+  display:block;
+  padding:2px;   
+ font-size:2rem;
+ line-height:3rem;
+
+ }
+ .emoj-row {
+    margin:1px;
+  padding-left:2em;
+  border-bottom: 1px solid #4455ff;
+  margin-left:1em;
+  width:70vw;
+  height:4rem;
+  display:block;
+  padding:2px;   
+ font-size:2rem;
+ line-height:3rem;
+
+ }
+ .emoj-row:nth-child(odd) {
+     background-color:#efefff;
+     border-bottom: 1px solid #ff0000;
+ }
+ .emoj-row img {
+  width:3vw;
+   margin:4px;
+  float:right;
+   
+ }
+ </style>
+</head>
+<body>
+    <div class="moj-row">
+        Find Github Users and Avatars
+ <button onclick="writeOut(emojis);">See Them!</button>
+</div>
+<div class="container">
+
+</div>
+
+<script>
+    const emojis = [];
+ //call the fetch function
+ fetch('https://api.github.com/emojis')
+    .then(res => res.json())//response type
+    .then(data => console.log(data)); //log the data;
+    async function getData() 
+        {
+            //await the response of the fetch call
+           let response = await fetch('https://api.github.com/users');
+            //proceed once the first promise is resolved.
+            let data = await response.json()
+            //proceed only when the second promise is resolved
+            return data;
+        }
+//call getData function
+getData()
+.then(data => emojis.push(...data)) //log the data
+
+ 
+function writeOut(emojis){
+ 
+  let row ="";
+    for(var i=0; i< emojis.length; i++) {
+     row +=  `<div class="emoj-row"><span>${emojis[i].login}</span><img src="${emojis[i].avatar_url}"></div>`;
+    }
+  const contains = document.querySelector('.container');
+  contains.innerHTML = row;
+    }  
+ /*
+function findMatches(wordToMatch, emojis) {
+  return emojis.filter(uname => {
+    // here we need to figure out if the city or state matches what was searched
+    const regex = new RegExp(wordToMatch, 'gi');
+    return uname.login.match(regex)  
+  });
+}*/
+ 
+</script>
+  </body>
+</html>

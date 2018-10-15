@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>eBay Search Results</title>
+<style type="text/css">body { font-family: arial,sans-serif;} 
+label {
+    width:10rem;
+    display:inline-block;
+    text-align:right;
+    font-size:1.2em;
+    }
+select  { 
+    text-transform:capitalize;   
+}
+select, button {font-size:1.2em; height:1.7em; border-radius:4px; margin:2px;}
+button {background-color:#ccddff;  
+ margin:2px;  box-shadow:4px 4px 2px }
+.header {
+    text-align:center;
+    width:91vw;
+    background-color:#14ee00;
+    padding:2px;
+
+}
+div {
+    width:90vw;
+    margin-left:5vw;
+}
+.buttoncontainer {
+    margin:5px 0;
+    padding:5px;
+    background-color:#ffffff;
+border-top:solid 2px #f5700b;
+border-bottom: solid 2px #f5700b;
+margin-right:-5px;
+overflow:hidden;
+}
+</style>
+</head>
+
+<body>
+    <div class="header"> 
+        <h1>Real bike values from ebay<br> <small>A handful of recently sold bike listings to better inform your pricing</small></h1>
+        <label for="make">Make</label><select id='make'></select>
+        <label for="model">Model</label><select id='model'></select>
+        <label >Search</label>
+        <input name='saletype' class='butts' type="radio" value=' -frame' checked='fongu'>Bike 
+        <input  name='saletype' class='butts' type="radio" value='frame'>Frame 
+    <div class="buttoncontainer">
+            <label>Find Bike Prices</label>
+    <button class="query">Go!</button>
+    </div>
+</div>
+<div id="results"></div>
+
+<script>
+//Find the bikes button    
+document.querySelector('.query').addEventListener('click', function () { findit()});
+
+//Find it function sets up querystring for ebay api
+function findit() {
+const myAppId ="TomGhore-SoldItem-PRD-e660f6938-a8eeda3b";
+const rad = document.querySelectorAll('input[type="radio"]:checked'); 
+const frameorbike = rad[0].value;
+var querystring = model.options[model.selectedIndex].value+'%20'+frameorbike; 
+querystring = querystring.replace(" ","%20");
+   
+var url = "http://svcs.ebay.com/services/search/FindingService/v1";
+url += "?OPERATION-NAME=findCompletedItems";
+    url += "&SERVICE-VERSION=1.0.0";
+    url += "&SECURITY-APPNAME="+myAppId;
+    url += "&GLOBAL-ID=EBAY-US";
+    url += "&RESPONSE-DATA-FORMAT=JSON";
+    url += "&callback=_cb_findCompletedItems";
+    url += "&REST-PAYLOAD"; 
+    var searcher = `&keywords=${querystring}`;   
+    url += searcher;
+    url += "&categoryId=177831";
+    url += "&paginationInput.entriesPerPage=50";
+  
+s=document.createElement('script'); // create script element
+s.src= url;
+document.body.appendChild(s);
+}
+
+//populate dropdowns
+function popDrops() {
+    const bikemake = [
+    {'bike':'santa cruz', 'model':['heckler','tallboy','hightower','nomad','5010','stigmata','chameleon','bronson','butcher']},
+    {'bike':'yeti', 'model':['sb 150','sb 130','sb 6','sb 5','sb5 beti','sb100','sb 100 beti','575','asr']},
+    {'bike':'evil', 'model':['offering','following','insurgent','wreckoning','undead','calling','imperial','soveriegn','revolt']},
+    {'bike':'specialized', 'model':['s-works','stumpjumper 6fattie','stumpjumper expert','stumpjumper 29','enduro','enduro 29','rockhopper','fatboy','fsr','epic','camber comp','camber expert']},
+    {'bike':'salsa', 'model':['spearfish','pony rustler','bucksaw','beargrease','redpoint','deadwood','mukluk','blackborow']},
+    ];
+    
+    const makes = document.querySelector('#make');
+    const models = document.querySelector('#model');
+    var brands = "<option>Choose a brand</option>\n";
+    const makesList =  bikemake.map((item,index) => { 
+    brands += `<option value="${index}"">${item.bike}</option>\n`;
+    });
+
+    makes.innerHTML = brands;
+    makes.addEventListener("change", function() {
+        document.querySelector('#model').options.length = 0;  
+        let modelopts ="";
+        const selIndex = makes.options[makes.selectedIndex].value;
+        const brand = makes.options[makes.selectedIndex].text; 
+        bikemake[selIndex].model.map((item)=> {
+            modelopts += `<option value="${brand}%20${item}">${item}</option>\n`;
+        });
+        models.innerHTML = modelopts;
+    }); 
+}
+//Call populate dropdowns
+popDrops();
+
+//bikes or frames
+var eliminator = 'frame';
+const buttons = document.querySelectorAll('.butts');
+buttons.forEach(function(e) {
+    e.addEventListener('click', function() {
+    if (this.value === 'frame') {
+    eliminator = 'frame';
+    } else {
+        eliminator = '-frame';
+    }
+ 
+}) });
+
+
+// get custom json and javascript from ebay
+function _cb_findCompletedItems(root) {
+  
+let html = '<table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody>';   
+let items = root.findCompletedItemsResponse[0].searchResult[0].item || [];
+if (items.length === 0) {
+    //whomp whomp
+  html = `<tr><td colspan=5>No Results</td></tr>`;
+} else {
+ const list = [];
+ const avgPrice = []; 
+ items.map((item => {
+  let str = `<tr> <td><a href="${item.viewItemURL[0]}" target="_blank"><img src="${item.galleryURL[0]}" border="0"></a>
+            <br>
+        ${item.itemId[0]}</td><td>${item.title[0]}</td></tr>`;
+  const value = item.sellingStatus[0].currentPrice[0].__value__;
+        
+    if(item.sellingStatus[0].sellingState[0]==='EndedWithSales' && value>200){
+        avgPrice.push(parseInt(value));
+        str =`${str}<tr><td style="text-align:right;background-color:#ffeeaa" colspan=5> ${value} </td></tr>`
+        list.push(str);       
+    }
+})); 
+var sorted = avgPrice.sort(function(a, b){return b-a});
+var high = avgPrice[0];
+var low = avgPrice[(avgPrice.length-1)];
+var itemTotal = avgPrice.length;
+var  sum = avgPrice.reduce((a, b) => a + b, 0);
+var avg = Math.round(sum / avgPrice.length);
+var header = `<tr><thead><td style="text-align:right; font-weight:bold;" colspan=5>Total Items: ${itemTotal} &nbsp; Low: $${low} High: $${high} Average: $${avg}</td></thead></tr>`;
+         
+ const txt = list.join("");
+ html = html + `${header} ${txt}</tbody></table>`;
+} // end if for results > 0
+ document.querySelector("#results").innerHTML = html;
+ }; // End 
+</script>
+</body>
+</html>

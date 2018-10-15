@@ -1,0 +1,108 @@
+<html>
+<head>
+    <style>
+    html,body 
+    {
+        background: #336699;
+        margin: 0;
+        overflow: hidden;
+    }
+</style>
+</head>
+<body>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.min.js"></script>
+       
+
+<script>
+ let canvas;
+let slider;
+
+let sourceText = `25 Years Married \r 300 MONTHS 9,132 DAYS \r  1,304 Weeks Five Addresses 2 Outstanding Boys 4 Bunnies 5 LARGE DOGS 2CATS a hamster 29 Bicycles Two Great Homes 789,004,800 Laughs`;
+let lines = [];
+
+function setup() {
+	slider = createSlider(1, 10, 3, 1);
+	slider.input(adjustLines);
+	
+	canvas = createCanvas(1375, 2125);
+	adjustLines();
+}
+
+function adjustLines() {
+	lines = [];
+	let k = slider.value();
+	let end = sourceText.split(' ').reduce((p, n, i, arr) => {
+			if(p.length <= k) {
+				return p + ' ' + n;
+			}
+			else if(p.length >= k * 1.8) {
+				lines.push(p + ' ' + n);
+			}
+			else {
+				return p + ' ' + n;
+			}
+			return '';
+		}, '');
+	
+	if(end) {
+		lines.push(end);
+	}
+	lines = lines.map(n => n.trim());
+}
+
+function draw() {
+	background(0);
+	
+	fill(255);
+	
+	let widthPerc = 0.99;
+	let maxWidth = width * widthPerc;
+	let maxHeight = 2100;
+    //height * (widthPerc * 1.04);
+	let marginTop = (height - maxHeight) / 2;
+	let marginLeft = (width - maxWidth) / 2;
+	
+	// textSize(14);
+	// fill(255, 120);
+	// text(lines.join('\n'), 10, 20);
+	
+	translate(marginLeft, marginTop);
+	fill(129, 26, 215);
+	rect(0, 10, maxWidth, maxHeight);
+	
+	textAlign(LEFT, TOP);
+	
+	fill(255);
+	
+	textSize(144);
+	
+	let originalTextSize = textSize();
+	let result = lines.map(line => {
+			let originalWidth = textWidth(line);
+			return {
+					originalWidth,
+					line,
+					size: originalTextSize * maxWidth / originalWidth
+				};
+		});
+	
+	let sorted = result.slice(0).sort((a, b) => b.size - a.size);
+	let tallest = sorted[0];
+	let shortest = sorted[sorted.length - 1];
+	let margin = (tallest.size + shortest.size) / 2;
+	
+	result.forEach(({ line, size }) => {
+			textSize(size);
+			text(line, 0, 0);
+			
+			translate(0, size);
+		});
+}
+
+function windowResized() {
+	resizeCanvas(1375, 2125);
+}
+</script>
+</body>
+</html>
